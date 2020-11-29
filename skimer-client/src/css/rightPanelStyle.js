@@ -4,7 +4,7 @@ import theme from "./theme";
 
 export default {
    rightPanel: {
-      width: 300,
+      width: 380,
       height: "100vh",
       border: "black solid 1px",
       position: "fixed",
@@ -71,7 +71,7 @@ export default {
             height: 10,
             borderRadius: 5,
             position: "relative",
-            background: "#ccc",
+            background: "#eee",
             padding: 0,
             gridColumn: "1 / 3",
             margin: "0 auto",
@@ -88,6 +88,6 @@ export default {
          "& h5, & span, & .progressBar": {
             marginTop: 20,
          },
-      },
+      }, // .userbox
    },
 };

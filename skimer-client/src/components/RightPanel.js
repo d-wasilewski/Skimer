@@ -1,5 +1,7 @@
 import React from "react";
 import { createUseStyles } from "react-jss";
+import Calendar from "react-calendar";
+import "../css/calendar.css";
 
 import Avatar from "../images/unknown.png";
 
@@ -24,6 +26,8 @@ export default function RightPanel() {
                <div className="progress"></div>
             </div>
          </div>
+
+         <Calendar className="calendar" />
       </div>
    );
 }
