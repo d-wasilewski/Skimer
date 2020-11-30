@@ -1,20 +1,15 @@
-import theme from "./theme.js";
+import theme from "./theme.js"
 
 export default {
    sidebar: {
-      width: 60,
-      border: "black solid 1px",
+      width: 70,
+      background: "white",
       height: "100vh",
       position: "fixed",
       display: "grid",
       gridTemplateColumns: "1fr",
       gridTemplateRows: "60px auto",
-      padding: {
-         top: 20,
-         left: 0,
-         right: 0,
-         bottom: 20,
-      },
+      padding: "26px 0px",
 
       "& .logo": {
          color: theme.pallette.main,
@@ -25,18 +20,41 @@ export default {
       "& ul": {
          listStyleType: "none",
          textAlign: "center",
-         color: theme.pallette.gray,
+         color: theme.pallette.grayDark,
          fontSize: 28,
          padding: 0,
-         margin: {
-            top: 80,
-         },
+         marginTop: 80,
 
          "& li": {
-            margin: {
-               top: 20,
+            padding: "10px 0",
+            height: 40,
+            position: "relative",
+
+            "&:hover": {
+               background: theme.pallette.gray,
+               cursor: "pointer",
+               color: theme.pallette.main,
+               "&:before": {
+                  display: "block",
+               },
+            },
+            "&.active": {
+               color: theme.pallette.main,
+               "&:before": {
+                  display: "block",
+               },
+            },
+            "&:before": {
+               content: "''",
+               position: "absolute",
+               left: 0,
+               top: 0,
+               display: "none",
+               height: 60,
+               width: 6,
+               background: theme.pallette.main,
             },
          },
       },
    },
-};
+}

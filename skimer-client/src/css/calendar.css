@@ -1,11 +1,3 @@
-:root {
-   --main: #ba26a7;
-   --main-lighter: #dd5577;
-   --accent: #d7991d;
-   --accent-lighter: #f0c46e;
-   --gray-light: #f9f9f9;
-}
-
 .react-calendar {
    width: 350px;
    max-width: 100%;
