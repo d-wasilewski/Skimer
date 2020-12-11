@@ -1,7 +1,7 @@
 import React from "react"
 import { createUseStyles } from "react-jss"
 
-import style from "../css/navbarStyle.js"
+import style from "../css/components/navbarStyle"
 
 const useStyles = createUseStyles(style)
 

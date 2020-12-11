@@ -1,11 +1,11 @@
 import React from "react"
 import { createUseStyles } from "react-jss"
 import Calendar from "react-calendar"
-import "../css/calendar.css"
+import "../css/components/calendar.css"
 
-import Avatar from "../images/unknown.png"
+import ProgressAvatar from "../components/progressAvatar"
 
-import style from "../css/rightPanelStyle.js"
+import style from "../css/components/rightPanelStyle"
 
 const useStyles = createUseStyles(style)
 
@@ -18,16 +18,12 @@ export default function RightPanel() {
             <a href="# " id="closeMenu">
                <i className="fas fa-times" />
             </a>
-            <h4>Michał Dzieciuchowicz</h4>
-            <div className="avatar">
-               <img src={Avatar} alt="avatar" />
-            </div>
-
-            <h5>Postęp</h5>
-            <span>70%</span>
-            <div className="progressBar">
-               <div className="progress"></div>
-            </div>
+            <h4>
+               Michał
+               <br />
+               Dzieciuchowicz
+            </h4>
+            <ProgressAvatar />
          </div>
 
          <Calendar className="calendar" />

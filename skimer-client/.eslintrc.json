@@ -8,6 +8,7 @@
       "prettier/react"
    ],
    "rules": {
+      "no-unused-vars": 1,
       "react/prop-types": 0,
       "no-console": 1,
       "react-hooks/rules-of-hooks": 2,

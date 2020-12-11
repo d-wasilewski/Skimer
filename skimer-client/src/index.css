@@ -1,6 +1,13 @@
 :root {
-   --main: #ba26a7;
+   /* --main: #ba26a7;
    --main-lighter: #dd5577;
+   --accent: #d7991d;
+   --accent-lighter: #f0c46e;
+   --gray-light: #f5f7f9;
+   --gray-lighter: #f9fbfc;
+   --gray: #e8ecf1; */
+   --main: #2c77e7;
+   --main-lighter: #5595dd;
    --accent: #d7991d;
    --accent-lighter: #f0c46e;
    --gray-light: #f5f7f9;
