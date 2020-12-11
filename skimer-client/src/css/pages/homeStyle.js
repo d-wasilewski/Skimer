@@ -8,8 +8,6 @@ export default {
       width: "calc(100% - 560px)",
       margin: 100,
       marginRight: 445,
-
-      minHeight: 500,
       "& > div": {
          background: "#fff",
          padding: 0,

@@ -18,6 +18,7 @@ export default {
       blueCyan: "linear-gradient(180deg, #2c77e7 0%, #0385b8 100%)",
    },
    shadows: {
+      small: "rgba(0, 0, 0, 0.5) 0 0 2px",
       medium: "rgba(0, 0, 0, 0.5) 0 0 5px",
    },
    fonts: {

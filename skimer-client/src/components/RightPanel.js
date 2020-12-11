@@ -26,7 +26,7 @@ export default function RightPanel() {
             <ProgressAvatar />
          </div>
 
-         <Calendar className="calendar" />
+         <Calendar className="calendar" minDetail="month" />
       </div>
    )
 }

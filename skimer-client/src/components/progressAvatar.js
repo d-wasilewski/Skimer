@@ -2,7 +2,6 @@ import React, { useState } from "react"
 import { createUseStyles } from "react-jss"
 
 import Avatar from "../images/unknown.png"
-
 import style from "../css/components/progressAvatarStyle"
 
 const useStyles = createUseStyles(style)
