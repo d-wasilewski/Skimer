@@ -7,11 +7,11 @@ export default {
       position: "relative",
       transition: "all 0.2s ease-in-out",
       cursor: "pointer",
+      width: "inherit",
+      whiteSpace: "nowrap",
+      overflow: "hidden",
+      textOverflow: "ellipsis",
 
-      "& h4": {
-         fontWeight: "normal",
-         margin: 0,
-      },
       "&:before": {
          content: "''",
          height: 50,

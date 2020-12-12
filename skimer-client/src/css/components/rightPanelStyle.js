@@ -11,6 +11,7 @@ export default {
       display: "grid",
       gridTemplateColumns: "1fr",
       gridTemplateRows: "350px 1fr 1fr",
+      zIndex: 1000,
 
       "@media (max-width: 960px)": {
          display: "none",

@@ -3,9 +3,8 @@ import theme from "../theme"
 export default {
    home: {
       display: "grid",
-      gridTemplateColumns: "1fr 2fr",
+      gridTemplateColumns: "33% 66%",
       columnGap: 15,
-      width: "calc(100% - 560px)",
       margin: 100,
       marginRight: 445,
       "& > div": {
@@ -20,6 +19,17 @@ export default {
             padding: 15,
             boxSizing: "border-box",
          },
+      },
+      "@media (max-width: 1200px)": {
+         gridTemplateColumns: "50% 50%",
+      },
+      "@media (max-width: 960px)": {
+         marginRight: 50,
+      },
+      "@media (max-width: 680px)": {
+         gridTemplateColumns: "100%",
+         gridTemplateRows: "auto auto",
+         rowGap: "15px",
       },
    },
 }
