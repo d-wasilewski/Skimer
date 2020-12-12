@@ -2,23 +2,29 @@ import theme from "../theme.js"
 
 export default {
    navbar: {
-      width: "calc(100% - 90px - 455px)",
+      width: "calc(100% - 455px - 23px)",
       height: 95,
-      background: "white",
-      paddingLeft: 90,
       paddingRight: 455,
+      paddingLeft: 23,
       display: "grid",
-      gridTemplateColumns: "60px 1fr",
+      gridTemplateColumns: "90px auto 1fr",
       alignItems: "center",
+      zIndex: 900,
+      background: theme.gradients.blueCyan,
 
       "@media (max-width: 960px)": {
-         width: "calc(100% - 130px)",
+         width: "calc(100% - 130px - 23px)",
          paddingRight: 130,
+      },
+
+      "& .logo": {
+         width: 60,
       },
 
       "& h2": {
          margin: 0,
          padding: 0,
+         color: "#fff",
       },
 
       "& ul": {
@@ -49,9 +55,11 @@ export default {
             width: 30,
             textAlign: "center",
             cursor: "pointer",
+            color: "#fff",
 
             "&:hover": {
                background: theme.pallette.gray,
+               color: theme.pallette.main,
             },
          },
       },

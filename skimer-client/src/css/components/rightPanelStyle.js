@@ -1,9 +1,9 @@
 import theme from "../theme.js"
+import wave from "../../images/userWaveBg.svg"
 
 export default {
    rightPanel: {
       width: 380,
-      background: "white",
       height: "100vh",
       padding: "0 15px",
       position: "fixed",
@@ -12,6 +12,9 @@ export default {
       gridTemplateColumns: "1fr",
       gridTemplateRows: "350px 1fr 1fr",
       zIndex: 1000,
+      background: `white url('${wave}')`,
+      backgroundPosition: "top",
+      backgroundRepeat: "no-repeat",
 
       "@media (max-width: 960px)": {
          display: "none",

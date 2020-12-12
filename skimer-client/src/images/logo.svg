@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Creator: CorelDRAW X8 -->
+<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="108px" height="108px" version="1.1" style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd"
+viewBox="0 0 108 108"
+ xmlns:xlink="http://www.w3.org/1999/xlink">
+ <defs>
+  <font id="FontID0" horiz-adv-x="637" font-variant="normal" style="fill-rule:nonzero" font-weight="400">
+	<font-face 
+		font-family="Franklin Gothic Heavy">
+		<font-face-src>
+			<font-face-name name="Franklin Gothic Heavy"/>
+		</font-face-src>
+	</font-face>
+   <missing-glyph><path d="M0 0z"/></missing-glyph>
+   <glyph unicode="S" horiz-adv-x="607" d="M-11.0021 193.831l190.002 34.168c16.0026,-54.0002 56.8334,-81.0003 123.002,-81.0003 51.3323,0 76.9962,13.6699 76.9962,41.0007 0,14.3358 -5.99696,25.4986 -17.8302,33.3323 -11.8332,8.0036 -33.0016,15.1669 -63.666,21.1684 -116.67,22.3348 -191.669,51.6675 -224.835,87.6677 -33.167,36.1654 -49.6655,78.663 -49.6655,127.497 0,62.8349 23.8317,115.168 71.4997,156.835 47.668,41.6665 116.165,62.4997 205.665,62.4997 135.666,0 225.171,-54.5007 268.835,-163.667l-168.999 -51.3323c-17.6695,44.665 -53.3344,66.9997 -106.999,66.9997 -44.6695,0 -66.9997,-13.8353 -66.9997,-41.5012 0,-12.3337 4.99594,-21.9996 15.1669,-28.8322 9.99646,-6.83268 29.4981,-13.1648 58.5002,-19.3317 79.8294,-16.5031 136.497,-31.1695 170,-43.9991 33.4976,-12.6689 61.4987,-34.8338 83.8335,-66.5038 22.3302,-31.5001 33.4976,-68.6666 33.4976,-111.499 0,-67.5002 -27.3307,-122.332 -82.0013,-164.333 -54.666,-41.9971 -126.496,-63.0002 -215.33,-63.0002 -162.336,0 -262.668,68.0008 -300.67,203.832z"/>
+  </font>
+  <style type="text/css">
+   <![CDATA[
+    @font-face { font-family:"Franklin Gothic Heavy";font-variant:normal;font-weight:normal;src:url("#FontID0") format(svg)}
+    .fil0 {fill:#008DD0}
+    .fil1 {fill:#71D0F6}
+    .fil2 {fill:white}
+    .fnt0 {font-weight:normal;font-size:61.8717px;font-family:'Franklin Gothic Heavy'}
+   ]]>
+  </style>
+ </defs>
+ <g id="Warstwa_x0020_1">
+  <metadata id="CorelCorpID_0Corel-Layer"/>
+  <g id="_1958260420768">
+   <path class="fil0" d="M5 41l68 -38 31 50c-9,24 -43,43 -43,43l-17 9 -39 -64z"/>
+   <path class="fil1" d="M104 53c-9,24 -43,43 -43,43 0,0 22,-18 22,-30 6,0 18,-7 21,-13z"/>
+   <rect class="fil1" transform="matrix(0.865444 -0.477577 0.613505 1.01021 5.11126 40.576)" width="78.4169" height="12.6285"/>
+   <g transform="matrix(0.978492 -0.360569 0.378259 0.932732 -27.6478 55.179)">
+    <text x="54" y="54"  class="fil2 fnt0">S</text>
+   </g>
+   <polygon class="fil1" points="90,19 98,24 75,58 67,53 64,67 75,58 67,53 "/>
+   <polygon class="fil0" points="94,14 102,19 100,21 98,24 90,19 92,16 "/>
+   <path class="fil0" d="M75 58l-8 -5 -3 13c0,0 0,0 0,0l11 -8c0,0 0,0 0,0zm0 0l-8 -5 0 0c2,0 3,1 5,2 1,1 2,2 3,3z"/>
+  </g>
+ </g>
+</svg>

@@ -10,7 +10,6 @@ export default function Sidebar() {
 
    return (
       <div className={classes.sidebar}>
-         <i className="fas fa-sticky-note logo"></i>
          <ul>
             <li className="active">
                <i className="far fa-comment-alt"></i>

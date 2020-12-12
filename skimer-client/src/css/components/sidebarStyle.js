@@ -6,16 +6,11 @@ export default {
       background: "white",
       height: "100vh",
       position: "fixed",
+      top: 95,
       display: "grid",
       gridTemplateColumns: "1fr",
       gridTemplateRows: "60px auto",
       padding: "26px 0px",
-
-      "& .logo": {
-         color: theme.pallette.main,
-         fontSize: 32,
-         textAlign: "center",
-      },
 
       "& ul": {
          listStyleType: "none",

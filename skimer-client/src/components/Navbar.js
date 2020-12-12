@@ -1,5 +1,6 @@
 import React from "react"
 import { createUseStyles } from "react-jss"
+import logo from "../images/logo_alt.svg"
 
 import style from "../css/components/navbarStyle"
 
@@ -10,6 +11,7 @@ export default function Navbar() {
 
    return (
       <div className={classes.navbar} id="navbar">
+         <img src={logo} alt="Skimer" className="logo" />
          <h2>Skimer</h2>
          <ul>
             <li>
