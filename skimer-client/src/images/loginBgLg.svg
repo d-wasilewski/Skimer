@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Creator: CorelDRAW X8 -->
+<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="2000px" height="1009px" version="1.1" style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd"
+viewBox="0 0 2000 1009"
+ xmlns:xlink="http://www.w3.org/1999/xlink">
+ <defs>
+  <style type="text/css">
+   <![CDATA[
+    .fil0 {fill:white}
+    .fil3 {fill:url(#id0)}
+    .fil4 {fill:url(#id1)}
+    .fil2 {fill:url(#id2);fill-opacity:0.568627}
+    .fil1 {fill:url(#id3);fill-opacity:0.568627}
+   ]]>
+  </style>
+  <linearGradient id="id0" gradientUnits="userSpaceOnUse" x1="0.685701" y1="675.08" x2="682.352" y2="675.08">
+   <stop offset="0" style="stop-opacity:1; stop-color:#6B51ED"/>
+   <stop offset="1" style="stop-opacity:1; stop-color:#1181C8"/>
+  </linearGradient>
+  <linearGradient id="id1" gradientUnits="userSpaceOnUse" x1="461.648" y1="474.775" x2="1999.31" y2="474.775">
+   <stop offset="0" style="stop-opacity:1; stop-color:#1181C8"/>
+   <stop offset="1" style="stop-opacity:1; stop-color:#6B51ED"/>
+  </linearGradient>
+  <linearGradient id="id2" gradientUnits="userSpaceOnUse" xlink:href="#id1" x1="312.483" y1="447.624" x2="1999.31" y2="447.624">
+  </linearGradient>
+  <linearGradient id="id3" gradientUnits="userSpaceOnUse" xlink:href="#id0" x1="-0.685537" y1="616.189" x2="740.776" y2="616.189">
+  </linearGradient>
+ </defs>
+ <g id="Warstwa_x0020_1">
+  <metadata id="CorelCorpID_0Corel-Layer"/>
+  <rect class="fil0" width="2000" height="1009"/>
+  <path class="fil1" d="M741 1009l-740 0 0 -786c0,0 -33,313 221,246 432,-115 224,426 519,540z"/>
+  <path class="fil2" d="M318 0l1681 0 0 894c-22,11 -110,-63 -212,-17 -102,45 -547,-64 -561,-258 -14,-195 -172,-331 -578,-317 -405,14 -330,-302 -330,-302z"/>
+  <path class="fil3" d="M682 1009l-681 0 0 -668c0,0 53,480 273,422 219,-59 388,14 388,130 0,43 6,83 20,116z"/>
+  <path class="fil4" d="M468 0l1531 0 0 894c-22,11 -45,22 -68,32 -180,81 -547,-63 -561,-258 -14,-194 -172,-330 -577,-316 -406,14 -325,-352 -325,-352z"/>
+ </g>
+</svg>

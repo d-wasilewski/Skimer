@@ -57,9 +57,15 @@ export default {
             cursor: "pointer",
             color: "#fff",
 
+            "& i": {
+               color: "white",
+            },
+
             "&:hover": {
                background: theme.pallette.gray,
-               color: theme.pallette.main,
+               "& i": {
+                  color: theme.pallette.main,
+               },
             },
          },
       },

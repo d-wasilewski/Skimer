@@ -1,6 +1,9 @@
 import React from "react"
 import { createUseStyles } from "react-jss"
 import logo from "../images/logo_alt.svg"
+import { Link } from "react-router-dom"
+import logoutIcon from "../images/icons/logout.svg"
+import "../1351.js"
 
 import style from "../css/components/navbarStyle"
 
@@ -16,6 +19,11 @@ export default function Navbar() {
          <ul>
             <li>
                <i className="far fa-bell" />
+            </li>
+            <li>
+               <Link to={"/login"}>
+                  <i className="far fa-sign-out-alt"></i>
+               </Link>
             </li>
 
             <a href="#rightPanel">

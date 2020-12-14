@@ -1,18 +1,19 @@
 import React from "react"
-import Sidebar from "./components/Sidebar"
-import Navbar from "./components/Navbar"
-import RightPanel from "./components/RightPanel"
+import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom"
 
 import Home from "./pages/home"
+import Login from "./pages/login"
 
 function App() {
    return (
-      <div className="App">
-         <Sidebar />
-         <RightPanel />
-         <Navbar />
-         <Home />
-      </div>
+      <Router>
+         <div className="App">
+            <Switch>
+               <Route exact path="/" component={Home} />
+               <Route path="/login" component={Login} />
+            </Switch>
+         </div>
+      </Router>
    )
 }
 
