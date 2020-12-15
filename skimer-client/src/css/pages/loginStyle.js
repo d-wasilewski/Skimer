@@ -27,6 +27,9 @@ export default {
          flexDirection: "column",
          borderRadius: 10,
          boxShadow: theme.shadows.medium,
+         "& span": {
+            color: "blue",
+         },
       },
    },
 }

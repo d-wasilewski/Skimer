@@ -38,7 +38,7 @@ export default function Home() {
                {subjectList}
             </div>
             <div className="notes">
-               <h3>Notatki</h3>
+               <h3>Nadchodzące wydarzenia</h3>
             </div>
          </div>
       </Fragment>

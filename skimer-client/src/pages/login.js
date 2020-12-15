@@ -1,8 +1,7 @@
 import React from "react"
 import { createUseStyles } from "react-jss"
-import loginBgSm from "../images/loginBgSm.svg"
-import loginBgLg from "../images/loginBgLg.svg"
 import style from "../css/pages/loginStyle"
+import logo from "../images/logo.svg"
 
 const useStyles = createUseStyles(style)
 
@@ -11,7 +10,10 @@ export default function Login() {
    return (
       <div className={classes.login}>
          <div className="container">
-            <div className="login-header"></div>
+            <div className="login-header">
+               <img src={logo} alt="Skimer" className="logo" />
+               <span>chuj</span>
+            </div>
 
             <div className="login-zalogujsie">Zaloguj się</div>
 
