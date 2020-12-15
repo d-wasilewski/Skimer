@@ -17,13 +17,14 @@ export default {
          background: `white url('${loginBgSm}') no-repeat center center`,
          backgroundSize: "cover",
       },
-      "& > div": {
+      "& > .container": {
          backgroundColor: theme.pallette.grayLighter,
          width: 350,
          minHeight: 400,
          display: "flex",
          justifyContent: "center",
          alignItems: "center",
+         flexDirection: "column",
          borderRadius: 10,
          boxShadow: theme.shadows.medium,
       },
