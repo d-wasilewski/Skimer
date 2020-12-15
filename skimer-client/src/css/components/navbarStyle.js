@@ -7,7 +7,7 @@ export default {
       paddingRight: 455,
       paddingLeft: 23,
       display: "grid",
-      gridTemplateColumns: "90px auto 1fr",
+      gridTemplateColumns: "80px auto 1fr",
       alignItems: "center",
       zIndex: 900,
       background: theme.gradients.blueCyan,
@@ -18,7 +18,7 @@ export default {
       },
 
       "& .logo": {
-         width: 60,
+         width: 50,
       },
 
       "& h2": {
