@@ -1,21 +1,14 @@
 import theme from "../theme"
 
-let borderCustomColor =
-   theme.pallette.main +
-   " " +
-   theme.pallette.main +
-   " " +
-   theme.pallette.main +
-   " "
-
 export default {
    progressAvatar: {
       position: "relative",
-      "& img": {
-         width: 86,
-         height: 86,
-         borderRadius: "50%",
+
+      "& div": {
+         position: "absolute",
+         top: 0,
       },
+
       "& svg": {
          position: "absolute",
          width: 150,

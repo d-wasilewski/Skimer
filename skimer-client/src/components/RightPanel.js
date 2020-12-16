@@ -1,11 +1,11 @@
 import React from "react"
 import { createUseStyles } from "react-jss"
 import Calendar from "react-calendar"
-import "../css/components/calendar.css"
+import "../css/componentsStyle/calendar.css"
 
-import ProgressAvatar from "../components/progressAvatar"
+import ProgressAvatar from "./ProgressAvatar"
 
-import style from "../css/components/rightPanelStyle"
+import style from "../css/componentsStyle/RightPanelStyle"
 
 const useStyles = createUseStyles(style)
 
@@ -18,7 +18,7 @@ export default function RightPanel() {
             <a href="# " id="closeMenu">
                <i className="fas fa-times" />
             </a>
-            <h4>
+            <h4 className="name">
                Michał
                <br />
                Dzieciuchowicz

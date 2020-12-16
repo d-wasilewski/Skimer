@@ -4,8 +4,8 @@ window.FontAwesomeKitConfig = {
    baseUrl: "https://ka-f.fontawesome.com",
    detectConflictsUntil: null,
    iconUploads: {},
-   license: "free",
-   method: "css",
+   license: "pro",
+   method: "js",
    minify: { enabled: true },
    token: "7b30d9a3b5",
    v4FontFaceShim: { enabled: true },
@@ -421,7 +421,7 @@ window.FontAwesomeKitConfig = {
                         },
                      ],
                      [
-                        /(url\("?)https:\/\/kit-free([^.])*\.fontawesome\.com/g,
+                        /(url\("?)https:\/\/kit-pro([^.])*\.fontawesome\.com/g,
                         function (t, n) {
                            return "".concat(n).concat(e)
                         },

@@ -59,7 +59,9 @@ export default {
 
             "&:hover": {
                background: theme.pallette.gray,
-               color: theme.pallette.main,
+               "& svg": {
+                  color: theme.pallette.main,
+               },
             },
          },
       },

@@ -7,7 +7,7 @@ export default {
       columnGap: 15,
       margin: 100,
       marginRight: 445,
-      "& > div": {
+      "& > .subjects,  .notes": {
          background: "#fff",
          padding: 0,
          boxShadow: theme.shadows.medium,

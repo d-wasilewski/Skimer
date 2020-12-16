@@ -1,8 +1,8 @@
 import React, { useState } from "react"
 import { createUseStyles } from "react-jss"
 
-import Avatar from "../images/unknown.png"
-import style from "../css/components/progressAvatarStyle"
+import Avatar from "../components/Avatar"
+import style from "../css/componentsStyle/ProgressAvatarStyle"
 
 const useStyles = createUseStyles(style)
 
@@ -15,9 +15,7 @@ export default function ProgressAvatar() {
 
    return (
       <div className={classes.progressAvatar}>
-         <div className="avatar">
-            <img src={Avatar} alt="avatar" />
-         </div>
+         <Avatar size="60" />
          <svg>
             <circle cx="70" cy="70" r="70"></circle>
             <circle

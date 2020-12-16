@@ -1,8 +1,13 @@
-import React from "react"
+import React, { Fragment } from "react"
 import { createUseStyles } from "react-jss"
 
-import style from "../css/pages/homeStyle"
+import style from "../css/pagesStyle/homeStyle"
+
+import Sidebar from "../components/Sidebar"
+import Navbar from "../components/Navbar"
+import RightPanel from "../components/RightPanel"
 import SubjectListElement from "../components/SubjectListElement"
+import UpcomingEvent from "../components/UpcomingEvent"
 
 const useStyles = createUseStyles(style)
 
@@ -24,14 +29,28 @@ export default function Home() {
    ))
 
    return (
-      <div className={classes.home}>
-         <div className="subjects">
-            <h3>Lista przedmiotów</h3>
-            {subjectList}
+      <Fragment>
+         <Sidebar />
+         <RightPanel />
+         <Navbar />
+         <div className={classes.home}>
+            <div>
+               <div className="subjects">
+                  <h3>Lista przedmiotów</h3>
+                  {subjectList}
+               </div>
+            </div>
+            <div>
+               <div className="notes">
+                  <h3>Nadchodzące wydarzenia</h3>
+                  <UpcomingEvent />
+                  <UpcomingEvent />
+                  <UpcomingEvent />
+                  <UpcomingEvent />
+                  <UpcomingEvent />
+               </div>
+            </div>
          </div>
-         <div className="notes">
-            <h3>Notatki</h3>
-         </div>
-      </div>
+      </Fragment>
    )
 }

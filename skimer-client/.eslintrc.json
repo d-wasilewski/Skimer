@@ -7,6 +7,7 @@
       "prettier",
       "prettier/react"
    ],
+   "ignorePatterns": ["1351.js"],
    "rules": {
       "no-unused-vars": 1,
       "react/prop-types": 0,

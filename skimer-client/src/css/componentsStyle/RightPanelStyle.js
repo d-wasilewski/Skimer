@@ -44,7 +44,7 @@ export default {
             height: 30,
             textAlign: "center",
             cursor: "pointer",
-            color: "black",
+            color: "white",
             visibility: "hidden",
 
             "@media (max-width: 960px)": {
@@ -53,11 +53,11 @@ export default {
 
             "&:hover": {
                background: theme.pallette.gray,
+               color: theme.pallette.main,
             },
          },
 
-         // Username
-         "& h4": {
+         "& .name": {
             textAlign: "right",
             marginRight: 20,
          },

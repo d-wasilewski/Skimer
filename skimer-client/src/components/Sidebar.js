@@ -1,7 +1,7 @@
 import React from "react"
 import { createUseStyles } from "react-jss"
 
-import style from "../css/components/sidebarStyle"
+import style from "../css/componentsStyle/SidebarStyle"
 
 const useStyles = createUseStyles(style)
 
