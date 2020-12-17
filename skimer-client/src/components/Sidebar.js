@@ -15,7 +15,7 @@ export default function Sidebar() {
                <i className="far fa-comment-alt"></i>
             </li>
             <li>
-               <i className="fas fa-inbox"></i>
+               <i className="fab fa-dropbox"></i>
             </li>
          </ul>
       </div>

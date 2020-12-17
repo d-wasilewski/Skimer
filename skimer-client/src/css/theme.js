@@ -5,10 +5,11 @@ export default {
       // main: "#BA26A7",
       // mainLighter: "#DD5577",
       accent: "#D7991D",
+      gray: "#e8ecf1",
       grayLight: "#f5f7f9",
       grayLighter: "#f9fbfc",
-      gray: "#e8ecf1",
       grayDark: "#a9a3aa",
+      grayDarker: "#565656",
 
       main: "#2c77e7",
       mainLighter: "#5595dd",

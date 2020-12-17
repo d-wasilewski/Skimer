@@ -21,7 +21,7 @@ export default function Home() {
       { name: "Podstawy Kryptografii" },
       { name: "Podstawy Sieci Komputerowych" },
       { name: "Technologie XML" },
-      { name: "Gówno" },
+      { name: "Podstawy Elektroniki" },
    ]
 
    const subjectList = subjects.map((item) => (
