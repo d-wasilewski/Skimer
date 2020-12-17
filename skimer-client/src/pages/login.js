@@ -12,21 +12,25 @@ export default function Login() {
          <div className="container">
             <div className="login-header">
                <img src={logo} alt="Skimer" className="logo" />
-               <span></span>
+
+               <span>Skimer</span>
             </div>
 
             <div className="login-zalogujsie">Zaloguj się</div>
 
-            <form className="form">
-               <div>
-                  <label htmlFor="email">Login</label>
+            <form>
+               <div className="form">
                   <input
                      type="email"
                      name="email"
                      id="email"
                      placeholder="Email"
+                     autoComplete="off"
                      required
                   ></input>
+                  <label htmlFor="email">
+                     <span className="content-name">Name</span>
+                  </label>
                </div>
                <div>
                   <label htmlFor="password">Hasło</label>
