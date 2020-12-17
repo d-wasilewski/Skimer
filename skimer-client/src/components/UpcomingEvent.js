@@ -19,8 +19,10 @@ export default function UpcomingEvent() {
             <h5>Komputerowa Analiza Danych</h5>
             <span>Zrobić zadanie 3</span>
          </div>
-         <div className="author">
+         <div className="avatar">
             <Avatar size="56" />
+         </div>
+         <div className="author">
             <h5>Damian Wasilewski</h5>
             <span>Utworzono: 17.12.2020 15:35</span>
          </div>

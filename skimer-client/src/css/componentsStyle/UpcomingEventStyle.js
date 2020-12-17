@@ -7,7 +7,7 @@ export default {
       margin: "3px 2px",
       background: theme.pallette.grayLight,
       display: "grid",
-      gridTemplateColumns: "100px 1fr 1.3fr auto",
+      gridTemplateColumns: "100px 1fr 80px 1.3fr auto",
       gridTemplateRows: "90px",
       justifyContent: "left",
       alignItems: "center",
@@ -30,29 +30,26 @@ export default {
       },
       "& .subject": {
          display: "grid",
-         gridTemplateRows: "45px 45px",
          gridTemplateColumns: "1fr",
 
          "& h5": {
             fontSize: 16,
             fontWeight: 500,
+            margin: 0,
          },
          "& span": {
             color: theme.pallette.grayDarker,
             fontSize: 13,
          },
       },
+      "& .avatar": {},
       "& .author": {
          display: "grid",
-         gridTemplateColumns: "90px 1fr",
-         gridTemplateRows: "45px 45px",
-         "& div": {
-            gridRow: "1 / 3",
-            marginTop: 2,
-         },
+         gridTemplateColumns: "1fr",
          "& h5": {
             fontSize: 16,
             fontWeight: 500,
+            margin: 0,
          },
          "& span": {
             color: theme.pallette.grayDarker,
@@ -74,6 +71,16 @@ export default {
             padding: 11,
             margin: 10,
             borderRadius: "50%",
+            cursor: "pointer",
+         },
+      },
+      "@media (max-width: 1400px)": {
+         height: 180,
+         gridTemplateColumns: "100px 1fr 100px",
+         gridTemplateRows: "90px 90px",
+
+         "& .subject": {
+            gridColumn: "2 / 4",
          },
       },
    },
