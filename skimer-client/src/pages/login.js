@@ -21,26 +21,26 @@ export default function Login() {
             <form>
                <div className="form">
                   <input
-                     type="email"
+                     type="text"
                      name="email"
                      id="email"
-                     placeholder="Email"
                      autoComplete="off"
                      required
                   ></input>
-                  <label htmlFor="email">
+                  <label htmlFor="email" className="label-name">
                      <span className="content-name">Name</span>
                   </label>
                </div>
-               <div>
-                  <label htmlFor="password">Hasło</label>
+               <div className="form">
                   <input
                      type="password"
                      name="password"
                      id="password"
-                     placeholder="Password"
                      required
                   ></input>
+                  <label htmlFor="password" className="label-name">
+                     <span className="content-name">Haslo</span>
+                  </label>
                </div>
 
                <button>Submit</button>
