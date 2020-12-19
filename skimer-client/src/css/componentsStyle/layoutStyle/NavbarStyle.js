@@ -1,4 +1,4 @@
-import theme from "../theme.js"
+import theme from "../../theme.js"
 
 export default {
    navbar: {
@@ -12,7 +12,7 @@ export default {
       zIndex: 900,
       background: theme.gradients.blueCyan,
 
-      "@media (max-width: 960px)": {
+      "@media (max-width: 1050px)": {
          width: "calc(100% - 130px - 23px)",
          paddingRight: 130,
       },

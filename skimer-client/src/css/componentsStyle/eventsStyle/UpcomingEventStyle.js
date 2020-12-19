@@ -1,4 +1,4 @@
-import theme from "../theme"
+import theme from "../../theme"
 
 export default {
    UpcomingEvent: {
@@ -76,11 +76,28 @@ export default {
       },
       "@media (max-width: 1400px)": {
          height: 180,
-         gridTemplateColumns: "100px 1fr 100px",
+         gridTemplateColumns: "100px 1fr 150px",
          gridTemplateRows: "90px 90px",
 
          "& .subject": {
             gridColumn: "2 / 4",
+         },
+      },
+      "@media (max-width: 1200px)": {
+         height: 235,
+         gridTemplateColumns: "85px 1fr 150px",
+         gridTemplateRows: "90px 90px 45px",
+
+         "& .subject": {
+            gridColumn: "2 / 4",
+         },
+
+         "& .author": {
+            gridColumn: "2 / 4",
+         },
+         "& .icons": {
+            gridColumn: "1 / 4",
+            justifyContent: "center",
          },
       },
    },

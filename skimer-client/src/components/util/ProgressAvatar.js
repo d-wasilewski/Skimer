@@ -2,7 +2,7 @@ import React, { useState } from "react"
 import { createUseStyles } from "react-jss"
 
 import Avatar from "./Avatar"
-import style from "../css/componentsStyle/ProgressAvatarStyle"
+import style from "../../css/componentsStyle/utilStyle/ProgressAvatarStyle"
 
 const useStyles = createUseStyles(style)
 

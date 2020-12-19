@@ -1,27 +1,23 @@
 import React, { Fragment } from "react"
 import { createUseStyles } from "react-jss"
 
-import style from "../css/pagesStyle/homeStyle"
+import style from "../../css/componentsStyle/pagesStyle/chatStyle"
 
-import Sidebar from "../components/Sidebar"
-import Navbar from "../components/Navbar"
-import RightPanel from "../components/RightPanel"
-import SubjectListElement from "../components/SubjectListElement"
-import UpcomingEvent from "../components/UpcomingEvent"
+import Sidebar from "../layout/Sidebar"
+import Navbar from "../layout/Navbar"
+import ChatPanel from "../layout/ChatPanel"
+import SubjectListElement from "../subjects/SubjectListElement"
+import UpcomingEvent from "../events/UpcomingEvent"
 
 const useStyles = createUseStyles(style)
 
-export default function Home() {
+export default function Chat() {
    const classes = useStyles()
 
    const subjects = [
       { name: "Programowanie Komponentowe" },
       { name: "Podstawy Zarządzania Projektami" },
       { name: "Komputerowa Analiza Danych" },
-      { name: "Podstawy Kryptografii" },
-      { name: "Podstawy Sieci Komputerowych" },
-      { name: "Technologie XML" },
-      { name: "Podstawy Elektroniki" },
    ]
 
    const subjectList = subjects.map((item) => (
@@ -31,7 +27,7 @@ export default function Home() {
    return (
       <Fragment>
          <Sidebar />
-         <RightPanel />
+         <ChatPanel />
          <Navbar />
          <div className={classes.home}>
             <div>
@@ -43,9 +39,6 @@ export default function Home() {
             <div>
                <div className="notes">
                   <h3>Nadchodzące wydarzenia</h3>
-                  <UpcomingEvent />
-                  <UpcomingEvent />
-                  <UpcomingEvent />
                   <UpcomingEvent />
                   <UpcomingEvent />
                </div>

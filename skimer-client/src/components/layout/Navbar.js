@@ -1,10 +1,10 @@
 import React from "react"
 import { createUseStyles } from "react-jss"
-import logo from "../images/logo_alt.svg"
+import logo from "../../images/logo_alt.svg"
 import { Link } from "react-router-dom"
-import "../1351.js"
+import "../../1351.js"
 
-import style from "../css/componentsStyle/NavbarStyle"
+import style from "../../css/componentsStyle/layoutStyle/NavbarStyle"
 
 const useStyles = createUseStyles(style)
 

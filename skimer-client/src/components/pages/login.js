@@ -1,7 +1,10 @@
 import React from "react"
 import { createUseStyles } from "react-jss"
-import style from "../css/pagesStyle/loginStyle"
-import logo from "../images/logo.svg"
+import style from "../../css/componentsStyle/pagesStyle/loginStyle"
+
+import Button from "../util/Button"
+
+import logo from "../../images/logo.svg"
 
 const useStyles = createUseStyles(style)
 
@@ -42,8 +45,7 @@ export default function Login() {
                      <span className="content-name">Haslo</span>
                   </label>
                </div>
-
-               <button>Submit</button>
+               <Button>Zaloguj się</Button>
             </form>
          </div>
       </div>

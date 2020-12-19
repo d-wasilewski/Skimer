@@ -1,9 +1,9 @@
 import React from "react"
 import { createUseStyles } from "react-jss"
 
-import Avatar from "../components/Avatar"
+import Avatar from "../util/Avatar"
 
-import style from "../css/componentsStyle/UpcomingEventStyle"
+import style from "../../css/componentsStyle/eventsStyle/UpcomingEventStyle"
 
 const useStyles = createUseStyles(style)
 

@@ -1,7 +1,7 @@
-import theme from "../theme"
+import theme from "../../theme"
 
-import loginBgSm from "../../images/loginBgSm.svg"
-import loginBgLg from "../../images/loginBgLg.svg"
+import loginBgSm from "../../../images/loginBgSm.svg"
+import loginBgLg from "../../../images/loginBgLg.svg"
 
 export default {
    login: {

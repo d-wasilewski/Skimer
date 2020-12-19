@@ -1,19 +1,19 @@
 import React from "react"
 import { createUseStyles } from "react-jss"
 import Calendar from "react-calendar"
-import "../css/componentsStyle/calendar.css"
+import "../../css/componentsStyle/calendar.css"
 
-import ProgressAvatar from "./ProgressAvatar"
+import ProgressAvatar from "../util/ProgressAvatar"
 
-import style from "../css/componentsStyle/RightPanelStyle"
+import style from "../../css/componentsStyle/layoutStyle/HomePanelStyle"
 
 const useStyles = createUseStyles(style)
 
-export default function RightPanel() {
+export default function HomePanel() {
    const classes = useStyles()
 
    return (
-      <div className={classes.rightPanel} id="rightPanel">
+      <div className={classes.homePanel} id="rightPanel">
          <div className="userBox">
             <a href="# " id="closeMenu">
                <i className="fas fa-times" />
