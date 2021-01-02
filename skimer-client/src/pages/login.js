@@ -1,12 +1,49 @@
-import React from "react"
+import React, { useState } from "react"
 import { createUseStyles } from "react-jss"
 import style from "../css/pagesStyle/loginStyle"
 import logo from "../images/logo.svg"
+import axios from "axios"
 
 const useStyles = createUseStyles(style)
 
 export default function Login() {
    const classes = useStyles()
+
+   const [email, setEmail] = useState("")
+   const [password, setPassword] = useState("")
+   const [errors, setErrors] = useState({})
+
+   const setAuthorizationHeader = (token) => {
+      const FBIdToken = `Bearer ${token}`
+      localStorage.setItem("FBIdToken", FBIdToken)
+      axios.defaults.headers.common["Authorization"] = FBIdToken
+   }
+
+   const handleSubmit = (e) => {
+      e.preventDefault()
+
+      const userData = {
+         email,
+         password,
+      }
+
+      axios
+         .post("/login", userData)
+         .then((res) => {
+            console.log(res.data)
+            setAuthorizationHeader(res.data.token)
+            // dispatch(getUserData())
+            // dispatch({ type: CLEAR_ERRORS })
+            // history.push('/')
+         })
+         .catch((err) => {
+            // dispatch({
+            //     type: SET_ERRORS,
+            //     payload: err.response.data
+            // })
+         })
+   }
+
    return (
       <div className={classes.login}>
          <div className="container">
@@ -18,9 +55,11 @@ export default function Login() {
 
             <div className="login-zalogujsie">Zaloguj się</div>
 
-            <form>
+            <form noValidate onSubmit={handleSubmit}>
                <div className="form">
                   <input
+                     onChange={(e) => setEmail(e.target.value)}
+                     value={email}
                      type="text"
                      name="email"
                      id="email"
@@ -33,6 +72,8 @@ export default function Login() {
                </div>
                <div className="form">
                   <input
+                     onChange={(e) => setPassword(e.target.value)}
+                     value={password}
                      type="password"
                      name="password"
                      id="password"
