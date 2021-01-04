@@ -105,6 +105,10 @@ export default {
                   transform: "translateX(0%)",
                },
             },
+            "& .button": {
+               alignItems: "center",
+               justifyContent: "center",
+            },
          },
       },
    },

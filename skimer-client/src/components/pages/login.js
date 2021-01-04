@@ -1,55 +1,41 @@
-import React, { useState } from "react"
+import React, { useState, useEffect } from "react"
 import { createUseStyles } from "react-jss"
 
-import style from "../css/pagesStyle/loginStyle"
-import logo from "../images/logo.svg"
 import axios from "axios"
-
 import style from "../../css/componentsStyle/pagesStyle/loginStyle"
-
 import Button from "../util/Button"
-
 import logo from "../../images/logo.svg"
+import { loginUser } from "../../redux/actions/userActions"
+import { connect } from "react-redux"
+import PropTypes from "prop-types"
 
 const useStyles = createUseStyles(style)
 
-export default function Login() {
+function Login(props) {
    const classes = useStyles()
 
    const [email, setEmail] = useState("")
    const [password, setPassword] = useState("")
-   const [errors, setErrors] = useState({})
-
-   const setAuthorizationHeader = (token) => {
-      const FBIdToken = `Bearer ${token}`
-      localStorage.setItem("FBIdToken", FBIdToken)
-      axios.defaults.headers.common["Authorization"] = FBIdToken
-   }
+   const [errors, setErrors] = useState()
 
    const handleSubmit = (e) => {
       e.preventDefault()
-
       const userData = {
          email,
          password,
       }
-
-      axios
-         .post("/login", userData)
-         .then((res) => {
-            console.log(res.data)
-            setAuthorizationHeader(res.data.token)
-            // dispatch(getUserData())
-            // dispatch({ type: CLEAR_ERRORS })
-            // history.push('/')
-         })
-         .catch((err) => {
-            // dispatch({
-            //     type: SET_ERRORS,
-            //     payload: err.response.data
-            // })
-         })
+      props.loginUser(userData, props.history)
+      console.log(props)
+      console.log(errors.email)
    }
+
+   useEffect(() => {
+      setErrors(props.UI.errors)
+   }, [props.UI])
+
+   useEffect(() => {
+      setErrors({})
+   })
 
    return (
       <div className={classes.login}>
@@ -90,9 +76,27 @@ export default function Login() {
                      <span className="content-name">Haslo</span>
                   </label>
                </div>
+               {errors.general ? errors.general : null}
                <Button>Zaloguj się</Button>
             </form>
          </div>
       </div>
    )
 }
+
+Login.propTypes = {
+   loginUser: PropTypes.func.isRequired,
+   user: PropTypes.object.isRequired,
+   UI: PropTypes.object.isRequired,
+}
+
+const mapStateToProps = (state) => ({
+   user: state.user,
+   UI: state.UI,
+})
+
+const mapActionsToProps = {
+   loginUser,
+}
+
+export default connect(mapStateToProps, mapActionsToProps)(Login)
