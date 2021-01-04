@@ -1,8 +1,8 @@
-import theme from "../theme.js"
-import wave from "../../images/userWaveBg.svg"
+import theme from "../../theme.js"
+import wave from "../../../images/userWaveBg.svg"
 
 export default {
-   rightPanel: {
+   homePanel: {
       width: 380,
       height: "100vh",
       padding: "0 15px",
@@ -16,7 +16,7 @@ export default {
       backgroundPosition: "top",
       backgroundRepeat: "no-repeat",
 
-      "@media (max-width: 960px)": {
+      "@media (max-width: 1050px)": {
          display: "none",
          "&:target": {
             display: "grid",
@@ -47,7 +47,7 @@ export default {
             color: "white",
             visibility: "hidden",
 
-            "@media (max-width: 960px)": {
+            "@media (max-width: 1050px)": {
                visibility: "visible",
             },
 

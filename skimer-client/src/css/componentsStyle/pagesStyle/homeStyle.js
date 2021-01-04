@@ -1,4 +1,4 @@
-import theme from "../theme"
+import theme from "../../theme"
 
 export default {
    home: {
@@ -20,11 +20,11 @@ export default {
             boxSizing: "border-box",
          },
       },
-      "@media (max-width: 1200px)": {
-         gridTemplateColumns: "50% 50%",
-      },
-      "@media (max-width: 960px)": {
+      "@media (max-width: 1050px)": {
          marginRight: 50,
+      },
+      "@media (max-width: 800px)": {
+         gridTemplateColumns: "40% 60%",
       },
       "@media (max-width: 680px)": {
          gridTemplateColumns: "100%",

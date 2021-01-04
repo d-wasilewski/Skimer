@@ -1,7 +1,7 @@
 import React from "react"
 import { createUseStyles } from "react-jss"
 
-import style from "../css/componentsStyle/SubjectListElementStyle"
+import style from "../../css/componentsStyle/subjectsStyle/SubjectListElementStyle"
 
 const useStyles = createUseStyles(style)
 

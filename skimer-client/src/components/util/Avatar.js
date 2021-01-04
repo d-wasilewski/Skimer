@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react"
 import { createUseStyles } from "react-jss"
 
-import style from "../css/componentsStyle/AvatarStyle"
+import style from "../../css/componentsStyle/utilStyle/AvatarStyle"
 
-import AvatarImage from "../images/unknown.png"
+import AvatarImage from "../../images/unknown.png"
 
 const useStyles = createUseStyles(style)
 
