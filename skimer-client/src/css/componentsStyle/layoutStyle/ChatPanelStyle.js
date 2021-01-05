@@ -2,7 +2,7 @@ import theme from "../../theme.js"
 import wave from "../../../images/userWaveBg.svg"
 
 export default {
-   homePanel: {
+   chatPanel: {
       width: 380,
       height: "100vh",
       padding: "0 15px",

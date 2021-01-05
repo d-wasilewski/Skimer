@@ -1,8 +1,8 @@
 import React from "react"
 import { createUseStyles } from "react-jss"
-import logo from "../../images/logo_alt.svg"
 import { Link } from "react-router-dom"
-import "../../1351.js"
+
+import logo from "../../images/logo_alt.svg"
 
 import style from "../../css/componentsStyle/layoutStyle/NavbarStyle"
 
@@ -13,8 +13,10 @@ export default function Navbar() {
 
    return (
       <div className={classes.navbar} id="navbar">
-         <img src={logo} alt="Skimer" className="logo" />
-         <h2>Skimer</h2>
+         <Link to="/">
+            <img src={logo} alt="Skimer" className="logo" />
+         </Link>
+         <h2>Schemer</h2>
          <ul>
             <li>
                <i className="far fa-bell" />

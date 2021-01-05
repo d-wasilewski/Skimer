@@ -14,7 +14,7 @@ export const loginUser = (userData, history) => (dispatch) => {
       .post("/login", userData)
       .then((res) => {
          setAuthorizationHeader(res.data.token)
-         dispatch(getUserData())
+         //dispatch(getUserData())
          dispatch({ type: CLEAR_ERRORS })
          history.push("/")
       })

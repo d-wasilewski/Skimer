@@ -13,7 +13,7 @@ import { logoutUser, getUserData } from "./redux/actions/userActions"
 import jwtDecode from "jwt-decode"
 import axios from "axios"
 
-axios.defaults.baseURL = "http://localhost:5000/skimer-a5934/us-central1/api"
+axios.defaults.baseURL = "http://localhost:5000/skimer-a5934/europe-west1/api"
 
 const token = localStorage.FBIdToken
 if (token) {

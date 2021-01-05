@@ -29,7 +29,7 @@ export default function Chat() {
          <Sidebar />
          <ChatPanel />
          <Navbar />
-         <div className={classes.home}>
+         <div className={classes.chat}>
             <div>
                <div className="subjects">
                   <h3>Lista przedmiotów</h3>

@@ -15,7 +15,6 @@ export default {
       "& ul": {
          listStyleType: "none",
          textAlign: "center",
-         color: theme.pallette.grayDark,
          fontSize: 28,
          padding: 0,
          marginTop: 80,
@@ -24,16 +23,11 @@ export default {
             padding: "10px 0",
             height: 40,
             position: "relative",
+            color: theme.pallette.grayDark,
 
             "&:hover": {
                background: theme.pallette.gray,
                cursor: "pointer",
-               color: theme.pallette.main,
-               "&:before": {
-                  display: "block",
-               },
-            },
-            "&.active": {
                color: theme.pallette.main,
                "&:before": {
                   display: "block",
@@ -49,6 +43,12 @@ export default {
                width: 6,
                background: theme.pallette.main,
             },
+         },
+      },
+      "& a.active li": {
+         color: theme.pallette.main,
+         "&:before": {
+            display: "block",
          },
       },
    },

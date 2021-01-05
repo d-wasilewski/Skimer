@@ -65,7 +65,7 @@ export default {
          fontSize: 19,
          margin: "0 10px",
          boxSizing: "border-box",
-         "& svg": {
+         "& svg, i": {
             background: theme.gradients.navyBlue,
             color: "white",
             padding: 11,

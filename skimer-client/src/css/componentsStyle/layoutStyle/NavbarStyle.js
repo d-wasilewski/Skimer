@@ -36,7 +36,6 @@ export default {
 
          "& a": {
             textDecoration: "none",
-            color: "black",
          },
 
          "& #menuButton": {
@@ -59,7 +58,7 @@ export default {
 
             "&:hover": {
                background: theme.pallette.gray,
-               "& svg": {
+               "& svg, i": {
                   color: theme.pallette.main,
                },
             },
