@@ -35,7 +35,7 @@ function Login(props) {
 
    useEffect(() => {
       setErrors({})
-   })
+   }, [])
 
    return (
       <div className={classes.login}>
@@ -76,7 +76,8 @@ function Login(props) {
                      <span className="content-name">Haslo</span>
                   </label>
                </div>
-               {errors.general ? errors.general : null}
+               {/* {errors.general ? errors.general : null} */}
+               {/* {errors.email && <h3 className="error"> {errors.email} </h3>} */}
                <Button>Zaloguj się</Button>
             </form>
          </div>
