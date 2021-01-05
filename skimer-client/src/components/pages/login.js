@@ -28,7 +28,6 @@ function Login(props) {
       }
       dispatch(loginUser(userData, props.history))
       console.log(props)
-      console.log(errors)
    }
 
    return (
@@ -57,6 +56,11 @@ function Login(props) {
                      <span className="content-name">Name</span>
                   </label>
                </div>
+
+               {errors && errors.email ? (
+                  <div className="emptyError"> {errors.email}</div>
+               ) : null}
+
                <div className="form">
                   <input
                      onChange={(e) => setPassword(e.target.value)}
@@ -70,10 +74,10 @@ function Login(props) {
                      <span className="content-name">Haslo</span>
                   </label>
                </div>
+               {errors && errors.password ? (
+                  <div className="emptyError"> {errors.password}</div>
+               ) : null}
                {errors && errors.general ? errors.general : null}
-               {errors && errors.email && (
-                  <h3 className="error"> {errors.email} </h3>
-               )}
                <Button>Zaloguj się</Button>
             </form>
          </div>

@@ -18,6 +18,7 @@ export default {
       backgroundPosition: "0 -100%",
       transition: "1s ease",
       borderRadius: 9999,
+      outline: "none",
       "&:hover": {
          backgroundPosition: "150% 30%",
          color: "white",
