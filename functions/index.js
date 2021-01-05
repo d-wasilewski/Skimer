@@ -13,27 +13,20 @@ app.use(cors({
     ]
 }));
 
-
-const { 
-    login
-} = require('./handlers/users')
+const { getEventsInWeek, postEvent } = require('./handlers/events')
+const { getSubjects, getSubject } = require('./handlers/subjects')
+const { login, uploadImage, getAuthenticatedUser, getAllUsers } = require('./handlers/users')
 
 app.post('/login', login)
+app.get('/user', FBAuth, getAuthenticatedUser)
+app.get('/users', FBAuth, getAllUsers)
+app.post('/user/image', FBAuth, uploadImage)
+
+app.get('/subjects', FBAuth, getSubjects)
+app.get('/subject/:handle', FBAuth, getSubject)
+
+app.post('/event', FBAuth, postEvent)
+app.get('/events', FBAuth, getEventsInWeek)
 
 
 exports.api = functions.region('europe-west1').https.onRequest(app)
-
-// exports.getUsers = functions.https.onRequest((req, res) => {
-//     admin.firestore().collection('users').get()
-//     .then((data) => {
-//         let users =[];
-//         data.forEach((doc) => {
-//             users.push(doc.data())
-//         })
-//         return res.json(users)
-//     })
-    
-//     .catch((err => {
-//         console.log(err)
-//     }))
-// })

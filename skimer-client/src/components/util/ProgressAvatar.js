@@ -9,7 +9,7 @@ const useStyles = createUseStyles(style)
 export default function ProgressAvatar() {
    const classes = useStyles()
 
-   let [progress, setProgress] = useState(100)
+   let [progress, setProgress] = useState(60)
 
    let transformation = 440 - (440 * progress) / 100
 

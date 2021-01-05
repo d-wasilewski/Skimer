@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom"
 import Home from "./components/pages/home"
 import Chat from "./components/pages/chat"
 import Login from "./components/pages/login"
+import Subject from "./components/pages/subject"
 
 import { Provider } from "react-redux"
 import store from "./redux/store"
@@ -38,6 +39,7 @@ function App() {
                   <Route exact path="/" component={Home} />
                   <Route exact path="/chat/:user" component={Chat} />
                   <Route path="/login" component={Login} />
+                  <Route path="/subject/:sid" component={Subject} />
                </Switch>
             </div>
          </Router>
