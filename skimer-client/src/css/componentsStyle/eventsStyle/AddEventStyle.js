@@ -4,10 +4,10 @@ export default {
    addEvent: {
       "& .bg": {
          backgroundColor: "rgb(0,0,0, 0.4)",
-         width: "100vw",
-         height: "100vh",
+         width: "100%",
+         height: "100%",
          zIndex: 1999,
-         position: "absolute",
+         position: "fixed",
          top: 0,
          left: 0,
          border: "none",
@@ -18,7 +18,7 @@ export default {
          width: 500,
          background: "#fff",
          boxShadow: theme.shadows.medium,
-         top: "350px",
+         top: "400px",
          left: "50%",
          transform: "translate(-50%, -50%)",
          zIndex: 2000,
