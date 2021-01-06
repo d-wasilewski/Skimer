@@ -22,12 +22,15 @@ if (token) {
    console.log(decodedToken)
    if (decodedToken.exp * 1000 < Date.now()) {
       store.dispatch(logoutUser())
-      window.location.href = "login"
+      console.log("przenosze")
+      window.location.href = "/login"
    } else {
       store.dispatch({ type: SET_AUTHENTICATED })
       axios.defaults.headers.common["Authorization"] = token
       store.dispatch(getUserData())
    }
+} else if (window.location.pathname != "/login") {
+   window.location.href = "/login"
 }
 
 function App() {
