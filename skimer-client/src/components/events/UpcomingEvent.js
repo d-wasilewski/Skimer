@@ -55,13 +55,14 @@ export default function UpcomingEvent(props) {
          </div>
          <div className="icons">
             <i className="fas fa-check"></i>
-            <i
+            <div
                onClick={dispatch(deleteEvent(event.eventId))}
-               onKeyDown={(e) => console.log(e)}
+               onKeyDown={(e) => console.log("JEBAC DISA SKURWYSYNA")}
                role="button"
                tabIndex={0}
-               className="fas fa-trash-alt"
-            ></i>
+            >
+               <i className="fas fa-trash-alt"></i>
+            </div>
          </div>
       </div>
    )
