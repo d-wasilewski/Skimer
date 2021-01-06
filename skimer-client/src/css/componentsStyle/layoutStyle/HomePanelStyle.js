@@ -8,6 +8,7 @@ export default {
       padding: "0 15px",
       position: "fixed",
       right: 0,
+      top: 0,
       display: "grid",
       gridTemplateColumns: "1fr",
       gridTemplateRows: "350px 1fr 1fr",

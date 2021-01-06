@@ -1,6 +1,7 @@
 import React from "react"
 import { createUseStyles } from "react-jss"
 import Calendar from "react-calendar"
+import { useSelector, useDispatch } from "react-redux"
 import "../../css/componentsStyle/calendar.css"
 
 import ProgressAvatar from "../util/ProgressAvatar"
@@ -11,6 +12,7 @@ const useStyles = createUseStyles(style)
 
 export default function HomePanel() {
    const classes = useStyles()
+   //const username = useSelector((state) => state.user.user.auth.name).split(" ")
 
    return (
       <div className={classes.homePanel} id="rightPanel">

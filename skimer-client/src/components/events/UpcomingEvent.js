@@ -20,7 +20,7 @@ export default function UpcomingEvent(props) {
 
    useEffect(() => {
       let user = users.find((user) => user.handle == event.author)
-      event.authorName = user.name
+      //event.authorName = user.name
    }, [])
 
    return (

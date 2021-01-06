@@ -29,8 +29,6 @@ if (token) {
       axios.defaults.headers.common["Authorization"] = token
       store.dispatch(getUserData())
    }
-} else if (window.location.pathname != "/login") {
-   window.location.href = "/login"
 }
 
 function App() {

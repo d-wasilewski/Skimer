@@ -5,6 +5,7 @@ import { useSelector, useDispatch } from "react-redux"
 import style from "../../css/componentsStyle/pagesStyle/loginStyle"
 import Button from "../util/Button"
 import logo from "../../images/logo.svg"
+import TextInput from "../util/TextInput"
 import { loginUser } from "../../redux/actions/userActions"
 
 const useStyles = createUseStyles(style)
@@ -38,38 +39,29 @@ function Login(props) {
             <div className="login-zalogujsie">Zaloguj się</div>
 
             <form noValidate onSubmit={handleSubmit}>
-               <div className="form">
-                  <input
-                     onChange={(e) => setEmail(e.target.value)}
-                     value={email}
-                     type="text"
-                     name="email"
-                     id="email"
-                     autoComplete="off"
-                     required
-                  ></input>
-                  <label htmlFor="email" className="label-name">
-                     <span className="content-name">Name</span>
-                  </label>
-               </div>
-
+               <TextInput
+                  onChange={(e) => setEmail(e.target.value)}
+                  value={email}
+                  type="text"
+                  name="email"
+                  id="email"
+                  autoComplete="off"
+                  label="Email"
+                  required
+               />
                {errors && errors.email ? (
                   <div className="emptyError"> {errors.email}</div>
                ) : null}
 
-               <div className="form">
-                  <input
-                     onChange={(e) => setPassword(e.target.value)}
-                     value={password}
-                     type="password"
-                     name="password"
-                     id="password"
-                     required
-                  ></input>
-                  <label htmlFor="password" className="label-name">
-                     <span className="content-name">Haslo</span>
-                  </label>
-               </div>
+               <TextInput
+                  onChange={(e) => setPassword(e.target.value)}
+                  value={password}
+                  type="password"
+                  name="password"
+                  id="password"
+                  label="Password"
+                  required
+               />
                {errors && errors.password ? (
                   <div className="emptyError"> {errors.password}</div>
                ) : null}
