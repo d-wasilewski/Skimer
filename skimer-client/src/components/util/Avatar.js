@@ -9,7 +9,7 @@ const useStyles = createUseStyles(style)
 
 export default function Avatar(props) {
    let [initials, setInitials] = useState("MD")
-   const { size } = props
+   const { size, avatarImage } = props
    let override
    if (size) {
       let scale = size / 86
@@ -23,7 +23,7 @@ export default function Avatar(props) {
    return (
       <div className={classes.Avatar} style={override}>
          <h4 className="initials">{initials}</h4>
-         <img src={AvatarImage} alt="Avatar" />
+         {avatarImage ? <img src={avatarImage} alt="Avatar" /> : null}
       </div>
    )
 }
