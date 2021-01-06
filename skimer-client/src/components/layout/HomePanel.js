@@ -3,6 +3,7 @@ import { createUseStyles } from "react-jss"
 import Calendar from "react-calendar"
 import { useSelector, useDispatch } from "react-redux"
 import "../../css/componentsStyle/calendar.css"
+import AvatarImage from "../../images/unknown.png"
 
 import ProgressAvatar from "../util/ProgressAvatar"
 
@@ -25,7 +26,7 @@ export default function HomePanel() {
                <br />
                Dzieciuchowicz
             </h4>
-            <ProgressAvatar />
+            <ProgressAvatar avatarImage={AvatarImage} progress="60" />
          </div>
 
          <Calendar className="calendar" minDetail="month" />

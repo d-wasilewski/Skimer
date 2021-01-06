@@ -11,6 +11,8 @@ export default {
       justifyContent: "center",
       alignItems: "center",
       transform: "scale(1)",
+      border: "none",
+      outline: "none",
 
       "& .initials": {
          textAlign: "center",

@@ -39,5 +39,8 @@ export default {
          left: -67,
          top: 105,
       },
+      "& input": {
+         display: "none",
+      },
    },
 }
