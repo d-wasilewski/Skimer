@@ -31,9 +31,9 @@ exports.getEvents = (req, res) => {
   };
 
   exports.postEvent = (req, res) => {
-    if (req.body.subjectHandle.trim() === '') {
-      return res.status(400).json({ body: 'Body must not be empty' });
-    }
+    // if (req.body.subjectHandle.trim() === '') {
+    //   return res.status(400).json({ body: 'Body must not be empty' });
+    // }
   
     const newEvent = {
         author: req.user.handle,
@@ -56,3 +56,26 @@ exports.getEvents = (req, res) => {
         console.error(err);
       });
   };
+
+  exports.deleteEvent = (req, res) => {
+    const document = db.doc(`/event/${req.params.eventId}`)
+    document.get()
+      .then(doc => {
+        if(!doc.exists){
+          return res.status(404).json({ error: 'Scream not found'})
+        }
+        if(doc.data().userHandle !== req.user.handle) {
+          return res.status(403).json({ error: 'Unauthorized' })
+        } else {
+          return document.delete()
+        }
+      })
+      // .then(() => {
+      //   res.json({ message: 'Scream deleted successfully' })
+      // })
+      .catch(err => {
+        console.error(err)
+        return res.status(500).json({ error: err.code })
+      })
+  }
+

@@ -8,6 +8,8 @@ import Avatar from "../util/Avatar"
 
 import style from "../../css/componentsStyle/eventsStyle/UpcomingEventStyle"
 
+import { deleteEvent } from "../../redux/actions/dataActions"
+
 const useStyles = createUseStyles(style)
 
 export default function UpcomingEvent(props) {
@@ -18,6 +20,7 @@ export default function UpcomingEvent(props) {
    const users = useSelector((state) => state.data.users)
 
    const { event } = props
+   console.log(subjects)
    console.log(event)
 
    useEffect(() => {}, [])
@@ -51,8 +54,15 @@ export default function UpcomingEvent(props) {
             <span>Utworzono: {createdAtDate}</span>
          </div>
          <div className="icons">
-            <i className="far fa-pencil-alt"></i>
             <i className="fas fa-check"></i>
+            <div
+               onClick={dispatch(deleteEvent(event.eventId))}
+               onKeyDown={(e) => console.log("JEBAC DISA SKURWYSYNA")}
+               role="button"
+               tabIndex={0}
+            >
+               <i className="fas fa-trash-alt"></i>
+            </div>
          </div>
       </div>
    )

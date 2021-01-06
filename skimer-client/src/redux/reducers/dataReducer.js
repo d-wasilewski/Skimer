@@ -5,6 +5,7 @@ import {
    SET_SUBJECTS,
    SET_SUBJECT,
    LOADING_DATA,
+   REMOVE_EVENT,
 } from "../types"
 
 const initialState = {
@@ -51,6 +52,21 @@ export default function (state = initialState, action) {
             ...state,
             loading: false,
             subject: action.payload,
+         }
+      case REMOVE_EVENT:
+         // moje
+         // return{
+         //    ...state,
+         //    events: events.filter(event => action.payload !== event.eventId)
+         // }
+         // jego
+
+         state.events.splice(
+            state.events.findIndex((event) => event.eventId === action.payload),
+            1
+         )
+         return {
+            ...state,
          }
 
       default:

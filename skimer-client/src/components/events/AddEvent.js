@@ -5,6 +5,7 @@ import style from "../../css/componentsStyle/eventsStyle/AddEventStyle"
 import TextInput from "../util/TextInput"
 import Button from "../util/Button"
 import { getSubjects } from "../../redux/actions/dataActions"
+import { addEvent } from "../../redux/actions/dataActions"
 
 const useStyles = createUseStyles(style)
 
@@ -17,12 +18,19 @@ export default function AddEvent(props) {
 
    const [description, setDescription] = useState("")
    const [deadline, setDeadline] = useState(new Date())
-   const [subject, setSubject] = useState("pel")
+   const [subjectHandle, setSubjectHandle] = useState("pel")
    const [error, setError] = useState("")
 
    const handleSubmit = (e) => {
       e.preventDefault()
       if (!error) console.log("wysłano")
+      const newEvent = {
+         description,
+         deadline,
+         subjectHandle,
+      }
+      dispatch(addEvent(newEvent))
+      toggleModal()
    }
 
    return (
@@ -32,9 +40,9 @@ export default function AddEvent(props) {
             <h3>Dodaj zadanie</h3>
             <form noValidate onSubmit={handleSubmit}>
                <select
-                  defaultValue={subject}
+                  defaultValue={subjectHandle}
                   onBlur={(e) => {
-                     setSubject(e.target.value)
+                     setSubjectHandle(e.target.value)
                   }}
                >
                   {subjects.map((item) => (

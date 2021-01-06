@@ -13,7 +13,7 @@ app.use(cors({
     ]
 }));
 
-const { getEvents, postEvent } = require('./handlers/events')
+const { getEvents, postEvent, deleteEvent } = require('./handlers/events')
 const { getSubjects, getSubject } = require('./handlers/subjects')
 const { login, uploadImage, getAuthenticatedUser, getAllUsers } = require('./handlers/users')
 
@@ -27,6 +27,7 @@ app.get('/subject/:handle', FBAuth, getSubject)
 
 app.post('/event', FBAuth, postEvent)
 app.get('/events', FBAuth, getEvents)
+app.delete('/event/:eventId', FBAuth, deleteEvent)
 
 
 exports.api = functions.region('europe-west1').https.onRequest(app)
