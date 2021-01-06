@@ -1,12 +1,14 @@
 const { db } = require('../util/admin');
 
 exports.getEvents = (req, res) => {
-    let nextWeek = new Date()
-    nextWeek.setDate(nextWeek.getDate() + 7)
+    
+
+    let nextWeek = new Date(new Date().getTime() + 1000 * 60 * 60 * 24 * 7)
+  
 
     db.collection('events')
-      .where('deadline', '<=', nextWeek)
-      .where('deadline', '>=', new Date())
+      // .where('deadline', '<=', nextWeek)
+      // .where('deadline', '>=', new Date())
       .orderBy('deadline', 'desc')
       .get()
       .then((data) => {
@@ -58,21 +60,21 @@ exports.getEvents = (req, res) => {
   };
 
   exports.deleteEvent = (req, res) => {
-    const document = db.doc(`/event/${req.params.eventId}`)
+    const document = db.doc(`/events/${req.params.eventId}`)
     document.get()
       .then(doc => {
         if(!doc.exists){
           return res.status(404).json({ error: 'Scream not found'})
         }
-        if(doc.data().userHandle !== req.user.handle) {
+        if(doc.data().author !== req.user.handle) {
           return res.status(403).json({ error: 'Unauthorized' })
         } else {
           return document.delete()
         }
       })
-      // .then(() => {
-      //   res.json({ message: 'Scream deleted successfully' })
-      // })
+      .then(() => {
+        return res.status(202).json({message: "deleted"})
+      })
       .catch(err => {
         console.error(err)
         return res.status(500).json({ error: err.code })

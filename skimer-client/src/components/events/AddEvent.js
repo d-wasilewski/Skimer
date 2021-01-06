@@ -33,6 +33,12 @@ export default function AddEvent(props) {
       toggleModal()
    }
 
+   let nextWeek = new Date()
+   console.log(nextWeek)
+
+   console.log(nextWeek.getTime() + 7 * 1000 * 60 * 60 * 24 * 7)
+   console.log(new Date(nextWeek.getTime() + 1000 * 60 * 60 * 24 * 7))
+
    return (
       <div className={classes.addEvent}>
          <button onClick={toggleModal} className="bg"></button>

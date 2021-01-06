@@ -13,7 +13,13 @@ const useStyles = createUseStyles(style)
 
 export default function HomePanel() {
    const classes = useStyles()
-   //const username = useSelector((state) => state.user.user.auth.name).split(" ")
+   const { user } = useSelector((state) => state.user)
+   const username = user && user.auth ? user.auth.name : "not set"
+
+   const name = username.split(" ")[0]
+   const surname = username.split(" ")[1]
+
+   console.log(user)
 
    return (
       <div className={classes.homePanel} id="rightPanel">
@@ -22,9 +28,9 @@ export default function HomePanel() {
                <i className="fas fa-times" />
             </a>
             <h4 className="name">
-               Michał
+               {name}
                <br />
-               Dzieciuchowicz
+               {surname}
             </h4>
             <ProgressAvatar avatarImage={AvatarImage} progress="60" />
          </div>

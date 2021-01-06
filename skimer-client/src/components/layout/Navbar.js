@@ -22,10 +22,7 @@ export default function Navbar() {
          </Link>
          <h2>Skimer</h2>
          <ul>
-            <Link
-               to={"/login"}
-               // onClick={dispatch(logoutUser())}
-            >
+            <Link to={"/login"} onClick={() => dispatch(logoutUser())}>
                <li>
                   <i className="far fa-sign-out-alt"></i>
                </li>
