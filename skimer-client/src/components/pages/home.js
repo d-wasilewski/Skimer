@@ -17,7 +17,9 @@ import {
    getSubjects,
    getUsers,
    getEvents,
+   deleteEvent,
 } from "../../redux/actions/dataActions"
+import SubjectListElementStyle from "../../css/componentsStyle/subjectsStyle/SubjectListElementStyle"
 
 const useStyles = createUseStyles(style)
 
@@ -30,8 +32,6 @@ export default function Home() {
    const events = useSelector((state) => state.data.events)
 
    const [showModal, setShowModal] = useState(false)
-   const [subjectList, setSubjectList] = useState()
-   const [eventList, setEventList] = useState()
 
    const toggleModal = () => setShowModal(!showModal)
 
@@ -41,19 +41,25 @@ export default function Home() {
       dispatch(getEvents())
    }, [dispatch])
 
-   useEffect(() => {
-      setSubjectList(
-         subjects.map((item) => (
-            <SubjectListElement name={item.name} key={item.name} />
-         ))
-      )
-   }, [subjects])
+   const renderSubjectsList = () => {
+      return subjects?.map((item) => (
+         <SubjectListElement name={item.name} key={item.name} />
+      ))
+   }
 
-   useEffect(() => {
-      setEventList(
-         events.map((item) => <UpcomingEvent event={item} key={item.eventId} />)
-      )
-   }, [events])
+   const renderEventsList = () => {
+      return events?.map((item, index) => (
+         <UpcomingEvent
+            event={item}
+            key={item.eventId}
+            handleEventDelete={() => handleEventDelete(index, item.eventId)}
+         />
+      ))
+   }
+
+   const handleEventDelete = (index, id) => {
+      dispatch(deleteEvent(id))
+   }
 
    return (
       <Fragment>
@@ -66,7 +72,7 @@ export default function Home() {
                   <h3>
                      <span>Lista przedmiotów</span>
                   </h3>
-                  {subjectList}
+                  {renderSubjectsList()}
                </div>
             </div>
             <div>
@@ -77,7 +83,7 @@ export default function Home() {
                         <i className="fas fa-plus"></i>
                      </button>
                   </h3>
-                  {eventList}
+                  {renderEventsList()}
                </div>
             </div>
             {showModal ? (

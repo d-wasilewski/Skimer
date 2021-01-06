@@ -75,10 +75,13 @@ export const getSubject = (subjectID) => (dispatch) => {
 }
 
 export const deleteEvent = (eventId) => (dispatch) => {
+   console.log("1")
+   console.log(eventId)
    axios
       .delete(`/event/${eventId}`)
-      .then(() => {
+      .then((res) => {
          dispatch({ type: REMOVE_EVENT, payload: eventId })
+         console.log(res)
       })
       .catch((err) => console.log(err))
 }

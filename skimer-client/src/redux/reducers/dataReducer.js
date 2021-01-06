@@ -53,21 +53,19 @@ export default function (state = initialState, action) {
             loading: false,
             subject: action.payload,
          }
-      case REMOVE_EVENT:
-         // moje
-         // return{
-         //    ...state,
-         //    events: events.filter(event => action.payload !== event.eventId)
-         // }
-         // jego
+      case REMOVE_EVENT: {
+         const events = [...state.events]
 
-         state.events.splice(
-            state.events.findIndex((event) => event.eventId === action.payload),
+         events.splice(
+            events.findIndex((event) => event.eventId === action.payload),
             1
          )
+         console.log(":(((((((")
          return {
             ...state,
+            events,
          }
+      }
 
       default:
          return state

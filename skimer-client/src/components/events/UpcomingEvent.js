@@ -12,29 +12,26 @@ import { deleteEvent } from "../../redux/actions/dataActions"
 
 const useStyles = createUseStyles(style)
 
-export default function UpcomingEvent(props) {
+export default function UpcomingEvent({ event, handleEventDelete }) {
    const classes = useStyles()
    const dispatch = useDispatch()
 
    const subjects = useSelector((state) => state.data.subjects)
    const users = useSelector((state) => state.data.users)
 
-   const { event } = props
-   console.log(subjects)
-   console.log(event)
-
-   useEffect(() => {}, [])
+   // console.log(subjects)
+   // console.log(event)
 
    let user = users.find((user) => user.handle == event.author)
-   console.log(user)
+   // console.log(user)
    // let xD = user.name
 
    dayjs.locale("pl")
    let createdAtDate = dayjs(event.createdAt).format("DD-MM-YYYY H:m")
    let deadlineDateName = dayjs(new Date()).format("dd")
    let deadlineDate = dayjs(new Date()).format("DD.MM") //zmienic czas
-   console.log(event.createdAt)
-   console.log(event.deadline)
+   // console.log(event.createdAt)
+   // console.log(event.deadline)
 
    return (
       <div className={classes.UpcomingEvent}>
@@ -56,8 +53,8 @@ export default function UpcomingEvent(props) {
          <div className="icons">
             <i className="fas fa-check"></i>
             <div
-               onClick={dispatch(deleteEvent(event.eventId))}
-               onKeyDown={(e) => console.log("JEBAC DISA SKURWYSYNA")}
+               onClick={() => handleEventDelete()}
+               onKeyDown={(e) => console.log()}
                role="button"
                tabIndex={0}
             >
