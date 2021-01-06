@@ -1,0 +1,74 @@
+import {
+   SET_USERS,
+   SET_EVENTS,
+   ADD_EVENT,
+   SET_SUBJECTS,
+   SET_SUBJECT,
+   LOADING_UI,
+} from "../types"
+import axios from "axios"
+
+export const getUsers = () => (dispatch) => {
+   dispatch({ type: LOADING_UI })
+   axios
+      .get("/users")
+      .then((res) => {
+         dispatch({
+            type: SET_USERS,
+            payload: res.data,
+         })
+      })
+      .catch((err) => console.log(err))
+}
+
+export const getEvents = () => (dispatch) => {
+   dispatch({ type: LOADING_UI })
+   axios
+      .get("/events")
+      .then((res) => {
+         dispatch({
+            type: SET_EVENTS,
+            payload: res.data,
+         })
+      })
+      .catch((err) => console.log(err))
+}
+
+export const addEvent = (event) => (dispatch) => {
+   dispatch({ type: LOADING_UI })
+   axios
+      .post("/event", event)
+      .then((res) => {
+         dispatch({
+            type: ADD_EVENT,
+            payload: res.data,
+         })
+      })
+      .catch((err) => console.log(err))
+}
+
+export const getSubjects = () => (dispatch) => {
+   dispatch({ type: LOADING_UI })
+   axios
+      .get("/subjects")
+      .then((res) => {
+         dispatch({
+            type: SET_SUBJECTS,
+            payload: res.data,
+         })
+      })
+      .catch((err) => console.log(err))
+}
+
+export const getSubject = (subjectID) => (dispatch) => {
+   dispatch({ type: LOADING_UI })
+   axios
+      .get(`/subject/${subjectID}`)
+      .then((res) => {
+         dispatch({
+            type: SET_SUBJECT,
+            payload: res.data,
+         })
+      })
+      .catch((err) => console.log(err))
+}

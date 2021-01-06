@@ -1,5 +1,6 @@
-import React, { Fragment } from "react"
+import React, { useState, useRef, useEffect, Fragment } from "react"
 import { createUseStyles } from "react-jss"
+import { useSelector, useDispatch } from "react-redux"
 
 import style from "../../css/componentsStyle/pagesStyle/homeStyle"
 
@@ -9,24 +10,44 @@ import HomePanel from "../layout/HomePanel"
 import SubjectListElement from "../subjects/SubjectListElement"
 import UpcomingEvent from "../events/UpcomingEvent"
 
+import {
+   getSubjects,
+   getUsers,
+   getEvents,
+} from "../../redux/actions/dataActions"
+
 const useStyles = createUseStyles(style)
 
 export default function Home() {
    const classes = useStyles()
+   const dispatch = useDispatch()
 
-   const subjects = [
-      { name: "Programowanie Komponentowe" },
-      { name: "Podstawy Zarządzania Projektami" },
-      { name: "Komputerowa Analiza Danych" },
-      { name: "Podstawy Kryptografii" },
-      { name: "Podstawy Sieci Komputerowych" },
-      { name: "Technologie XML" },
-      { name: "Podstawy Elektroniki" },
-   ]
+   const subjects = useSelector((state) => state.data.subjects)
+   const users = useSelector((state) => state.data.users)
+   const events = useSelector((state) => state.data.events)
 
-   const subjectList = subjects.map((item) => (
-      <SubjectListElement name={item.name} key={item.name} />
-   ))
+   const [subjectList, setSubjectList] = useState()
+   const [eventList, setEventList] = useState()
+
+   useEffect(() => {
+      dispatch(getSubjects())
+      dispatch(getUsers())
+      dispatch(getEvents())
+   }, [dispatch])
+
+   useEffect(() => {
+      setSubjectList(
+         subjects.map((item) => (
+            <SubjectListElement name={item.name} key={item.name} />
+         ))
+      )
+   }, [subjects])
+
+   useEffect(() => {
+      setEventList(
+         events.map((item) => <UpcomingEvent event={item} key={item.eventId} />)
+      )
+   }, [events])
 
    return (
       <Fragment>
@@ -43,11 +64,7 @@ export default function Home() {
             <div>
                <div className="notes">
                   <h3>Nadchodzące wydarzenia</h3>
-                  <UpcomingEvent />
-                  <UpcomingEvent />
-                  <UpcomingEvent />
-                  <UpcomingEvent />
-                  <UpcomingEvent />
+                  {eventList}
                </div>
             </div>
          </div>

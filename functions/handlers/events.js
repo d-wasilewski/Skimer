@@ -1,6 +1,6 @@
 const { db } = require('../util/admin');
 
-exports.getEventsInWeek = (req, res) => {
+exports.getEvents = (req, res) => {
     let nextWeek = new Date()
     nextWeek.setDate(nextWeek.getDate() + 7)
 

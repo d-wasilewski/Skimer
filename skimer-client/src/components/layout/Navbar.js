@@ -19,9 +19,6 @@ export default function Navbar() {
          </Link>
          <h2>Skimer</h2>
          <ul>
-            <li>
-               <i className="far fa-bell" />
-            </li>
             <Link to={"/login"}>
                <li>
                   <i className="far fa-sign-out-alt"></i>

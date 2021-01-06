@@ -2,13 +2,10 @@ import React, { useState, useEffect } from "react"
 import { createUseStyles } from "react-jss"
 import { useSelector, useDispatch } from "react-redux"
 
-import axios from "axios"
 import style from "../../css/componentsStyle/pagesStyle/loginStyle"
 import Button from "../util/Button"
 import logo from "../../images/logo.svg"
 import { loginUser } from "../../redux/actions/userActions"
-import { connect } from "react-redux"
-import PropTypes from "prop-types"
 
 const useStyles = createUseStyles(style)
 
@@ -27,7 +24,6 @@ function Login(props) {
          password,
       }
       dispatch(loginUser(userData, props.history))
-      console.log(props)
    }
 
    return (
@@ -83,12 +79,6 @@ function Login(props) {
          </div>
       </div>
    )
-}
-
-Login.propTypes = {
-   loginUser: PropTypes.func.isRequired,
-   user: PropTypes.object.isRequired,
-   UI: PropTypes.object.isRequired,
 }
 
 export default Login

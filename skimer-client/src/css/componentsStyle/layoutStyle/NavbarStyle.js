@@ -41,7 +41,7 @@ export default {
          "& #menuButton": {
             display: "none",
             order: "-1",
-            "@media (max-width: 960px)": {
+            "@media (max-width: 1050px)": {
                display: "block",
                order: 2,
             },

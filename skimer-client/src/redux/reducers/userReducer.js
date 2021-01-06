@@ -8,7 +8,7 @@ import {
 const initialState = {
    authenticated: false,
    loading: false,
-   credentials: {},
+   user: {},
 }
 
 export default function (state = initialState, action) {
@@ -26,7 +26,7 @@ export default function (state = initialState, action) {
          return {
             authenticated: true,
             loading: false,
-            ...action.payload,
+            user: action.payload,
          }
 
       case LOADING_USER:
