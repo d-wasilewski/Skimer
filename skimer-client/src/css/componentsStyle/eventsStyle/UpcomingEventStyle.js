@@ -72,6 +72,7 @@ export default {
             margin: 10,
             borderRadius: "50%",
             cursor: "pointer",
+            width: 19,
          },
       },
       "@media (max-width: 1400px)": {

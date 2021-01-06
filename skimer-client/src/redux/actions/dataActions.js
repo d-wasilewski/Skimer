@@ -5,6 +5,7 @@ import {
    SET_SUBJECTS,
    SET_SUBJECT,
    LOADING_UI,
+   REMOVE_EVENT,
 } from "../types"
 import axios from "axios"
 
@@ -69,6 +70,15 @@ export const getSubject = (subjectID) => (dispatch) => {
             type: SET_SUBJECT,
             payload: res.data,
          })
+      })
+      .catch((err) => console.log(err))
+}
+
+export const deleteEvent = (eventId) => (dispatch) => {
+   axios
+      .delete(`/event/${eventId}`)
+      .then(() => {
+         dispatch({ type: REMOVE_EVENT, payload: eventId })
       })
       .catch((err) => console.log(err))
 }
