@@ -1,9 +1,12 @@
 import React, { useState, useRef, useEffect, Fragment } from "react"
 import { createUseStyles } from "react-jss"
+import { navigate } from "@reach/router"
 import { useSelector, useDispatch } from "react-redux"
 
 import style from "../../css/componentsStyle/pagesStyle/homeStyle"
 
+import Modal from "../util/Modal"
+import AddEvent from "../events/AddEvent"
 import Sidebar from "../layout/Sidebar"
 import Navbar from "../layout/Navbar"
 import HomePanel from "../layout/HomePanel"
@@ -26,8 +29,11 @@ export default function Home() {
    const users = useSelector((state) => state.data.users)
    const events = useSelector((state) => state.data.events)
 
+   const [showModal, setShowModal] = useState(false)
    const [subjectList, setSubjectList] = useState()
    const [eventList, setEventList] = useState()
+
+   const toggleModal = () => setShowModal(!showModal)
 
    useEffect(() => {
       dispatch(getSubjects())
@@ -57,16 +63,28 @@ export default function Home() {
          <div className={classes.home}>
             <div>
                <div className="subjects">
-                  <h3>Lista przedmiotów</h3>
+                  <h3>
+                     <span>Lista przedmiotów</span>
+                  </h3>
                   {subjectList}
                </div>
             </div>
             <div>
                <div className="notes">
-                  <h3>Nadchodzące wydarzenia</h3>
+                  <h3>
+                     <span>Nadchodzące wydarzenia</span>
+                     <button onClick={toggleModal}>
+                        <i className="fas fa-plus"></i>
+                     </button>
+                  </h3>
                   {eventList}
                </div>
             </div>
+            {showModal ? (
+               <Modal>
+                  <AddEvent toggleModal={toggleModal} />
+               </Modal>
+            ) : null}
          </div>
       </Fragment>
    )

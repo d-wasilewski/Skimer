@@ -6,6 +6,7 @@ export default {
       gridTemplateColumns: "33% 66%",
       columnGap: 15,
       margin: 100,
+      marginTop: 200,
       marginRight: 445,
       "& .subjects,  .notes": {
          background: "#fff",
@@ -18,6 +19,21 @@ export default {
             margin: 0,
             padding: 15,
             boxSizing: "border-box",
+            display: "grid",
+            gridTemplateColumns: "1fr 30px",
+
+            "& button": {
+               border: "none",
+               outline: "none",
+               background: "none",
+               padding: "none",
+
+               "& svg, i": {
+                  alignSelf: "center",
+                  cursor: "pointer",
+                  color: "#fff",
+               },
+            },
          },
       },
       "@media (max-width: 1050px)": {

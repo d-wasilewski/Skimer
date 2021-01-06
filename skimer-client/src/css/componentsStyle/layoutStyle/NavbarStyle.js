@@ -11,6 +11,8 @@ export default {
       alignItems: "center",
       zIndex: 900,
       background: theme.gradients.blueCyan,
+      position: "fixed",
+      top: 0,
 
       "@media (max-width: 1050px)": {
          width: "calc(100% - 130px - 23px)",
