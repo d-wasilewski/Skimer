@@ -21,12 +21,12 @@ export default {
       },
 
       "& img": {
-         width: 86,
-         height: 86,
+         width: 88,
+         height: 88,
          borderRadius: "50%",
          position: "absolute",
-         top: 0,
-         left: 0,
+         top: -1,
+         left: -1,
       },
    },
 }
