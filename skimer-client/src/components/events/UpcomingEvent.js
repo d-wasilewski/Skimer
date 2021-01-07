@@ -21,6 +21,7 @@ export default function UpcomingEvent({
 
    const users = useSelector((state) => state.data.users)
    const currentUser = useSelector((state) => state.user)
+   const subjects = useSelector((state) => state.data.subjects)
 
    const currentUserHandle =
       currentUser && currentUser.user ? currentUser.user.auth.handle : "xd"
@@ -29,7 +30,7 @@ export default function UpcomingEvent({
    dayjs.locale("pl")
 
    let user = users.find((user) => user.handle == event.author)
-   const username = user && user.name ? user.name : "not set"
+   const username = user && user.name ? user.name : "Ładowanie..."
 
    const createdAt = event && event.createdAt ? event.createdAt : new Date()
    const deadline = event && event.deadline ? event.deadline : new Date()
@@ -39,6 +40,14 @@ export default function UpcomingEvent({
 
    let description = event ? event.description : ""
    let authorImage = event ? event.authorImage : ""
+   let subjectHandle = event ? event.subjectHandle : ""
+   let subjectFromList = subjects.find(
+      (subject) => subject.subjectId == subjectHandle
+   )
+   let subjectName =
+      subjectFromList && subjectFromList.name
+         ? subjectFromList.name
+         : "Ładowanie..."
 
    const trashIcon =
       authenticated && event.author == currentUserHandle ? (
@@ -52,7 +61,7 @@ export default function UpcomingEvent({
             <span>{deadlineDate}</span>
          </div>
          <div className="subject">
-            <h5>Komputerowa Analiza Danych</h5>
+            <h5>{subjectName}</h5>
             <span>{description}</span>
          </div>
          <div className="avatar">

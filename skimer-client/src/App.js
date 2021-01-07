@@ -22,7 +22,6 @@ if (token) {
    const decodedToken = jwtDecode(token)
    if (decodedToken.exp * 1000 < Date.now()) {
       store.dispatch(logoutUser())
-      console.log("przenosze")
       window.location.href = "/login"
    } else {
       store.dispatch({ type: SET_AUTHENTICATED })
