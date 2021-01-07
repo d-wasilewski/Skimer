@@ -37,7 +37,7 @@ function App() {
          <Router>
             <div className="App">
                <Switch>
-                  <PrivateRoute exact path="/" component={Home} />
+                  <Route exact path="/" component={Home} />
                   <PrivateRoute exact path="/timetable" component={Timetable} />
                   <Route exact path="/login" component={Login} />
                   <PrivateRoute

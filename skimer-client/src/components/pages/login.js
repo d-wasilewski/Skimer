@@ -39,29 +39,37 @@ function Login(props) {
             <div className="login-zalogujsie">Zaloguj się</div>
 
             <form noValidate onSubmit={handleSubmit}>
-               <TextInput
-                  onChange={(e) => setEmail(e.target.value)}
-                  value={email}
-                  type="text"
-                  name="email"
-                  id="email"
-                  autoComplete="off"
-                  label="Email"
-                  required
-               />
+               <div className="form">
+                  <input
+                     onChange={(e) => setEmail(e.target.value)}
+                     value={email}
+                     type="text"
+                     name="email"
+                     id="email"
+                     autoComplete="off"
+                     required
+                  ></input>
+                  <label htmlFor="email" className="label-name">
+                     <span className="content-name">Name</span>
+                  </label>
+               </div>
                {errors && errors.email ? (
                   <div className="emptyError"> {errors.email}</div>
                ) : null}
 
-               <TextInput
-                  onChange={(e) => setPassword(e.target.value)}
-                  value={password}
-                  type="password"
-                  name="password"
-                  id="password"
-                  label="Hasło"
-                  required
-               />
+               <div className="form">
+                  <input
+                     onChange={(e) => setPassword(e.target.value)}
+                     value={password}
+                     type="password"
+                     name="password"
+                     id="password"
+                     required
+                  ></input>
+                  <label htmlFor="password" className="label-name">
+                     <span className="content-name">Haslo</span>
+                  </label>
+               </div>
                {errors && errors.password ? (
                   <div className="emptyError"> {errors.password}</div>
                ) : null}

@@ -6,7 +6,6 @@ export default {
       width: 270,
       position: "relative",
       overflow: "hidden",
-
       "& input": {
          width: "100%",
          height: "100%",
@@ -18,7 +17,6 @@ export default {
          outline: "none",
          backgroundColor: "transparent",
       },
-
       "& label": {
          position: "absolute",
          bottom: 0,
@@ -49,7 +47,6 @@ export default {
             boxSizing: "border-box",
          },
       },
-
       "& input:focus + .label-name .content-name, & input:valid + .label-name .content-name": {
          transform: "translateY(-120%)",
          fontSize: "14px",
