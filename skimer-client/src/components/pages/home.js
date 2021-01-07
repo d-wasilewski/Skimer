@@ -14,10 +14,13 @@ import UpcomingEvent from "../events/UpcomingEvent"
 
 import {
    getSubjects,
+   clearSubject,
    getUsers,
    getEvents,
    deleteEvent,
 } from "../../redux/actions/dataActions"
+
+import { setFinished, setUnfinished } from "../../redux/actions/userActions"
 
 const useStyles = createUseStyles(style)
 
@@ -27,6 +30,8 @@ export default function Home() {
 
    const subjects = useSelector((state) => state.data.subjects)
    const events = useSelector((state) => state.data.events)
+   const { user } = useSelector((state) => state.user)
+   const finishedEvents = user && user.finished ? user.finished : []
 
    const [showModal, setShowModal] = useState(false)
 
@@ -36,6 +41,7 @@ export default function Home() {
       dispatch(getSubjects())
       dispatch(getUsers())
       dispatch(getEvents())
+      dispatch(clearSubject())
    }, [dispatch])
 
    const renderSubjectsList = () => {
@@ -49,17 +55,30 @@ export default function Home() {
    }
 
    const renderEventsList = () => {
-      return events?.map((item, index) => (
-         <UpcomingEvent
-            event={item}
-            key={item.eventId}
-            handleEventDelete={() => handleEventDelete(index, item.eventId)}
-         />
-      ))
+      return events?.map((item, index) => {
+         const isFinished =
+            finishedEvents.indexOf(item.eventId) != -1 ? "finished" : ""
+         return (
+            <UpcomingEvent
+               event={item}
+               key={item.eventId}
+               finished={isFinished}
+               handleEventDelete={() => handleEventDelete(item.eventId)}
+               handleSetFinished={() => handleSetFinished(item)}
+               handleSetUnfinished={() => handleSetUnfinished(item.eventId)}
+            />
+         )
+      })
    }
 
-   const handleEventDelete = (index, id) => {
+   const handleEventDelete = (id) => {
       dispatch(deleteEvent(id))
+   }
+   const handleSetFinished = (event) => {
+      dispatch(setFinished(event))
+   }
+   const handleSetUnfinished = (eventId) => {
+      dispatch(setUnfinished(eventId))
    }
 
    return (

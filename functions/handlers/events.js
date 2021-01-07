@@ -1,10 +1,7 @@
 const { db } = require('../util/admin');
 
 exports.getEvents = (req, res) => {
-    
-
     let nextWeek = new Date(new Date().getTime() + 1000 * 60 * 60 * 24 * 7)
-  
 
     db.collection('events')
       // .where('deadline', '<=', nextWeek)
@@ -32,11 +29,7 @@ exports.getEvents = (req, res) => {
       });
   };
 
-  exports.postEvent = (req, res) => {
-    // if (req.body.subjectHandle.trim() === '') {
-    //   return res.status(400).json({ body: 'Body must not be empty' });
-    // }
-  
+  exports.postEvent = (req, res) => {  
     const newEvent = {
         author: req.user.handle,
         authorImage: req.user.imageUrl,
@@ -80,4 +73,45 @@ exports.getEvents = (req, res) => {
         return res.status(500).json({ error: err.code })
       })
   }
+
+  exports.setFinished = (req, res) => {  
+    const newFinished = {
+        deadline: req.body.deadline,
+        userHandle: req.user.handle,
+        eventId: req.body.eventId,
+    };
+    db.collection('finished')
+      .add(newFinished)
+      .then((doc) => {
+        const resFinished = newFinished;
+        resFinished.finishedId = doc.id;
+        return res.status(202).json({message: "set finished"})
+      })
+      .catch((err) => {
+        res.status(500).json({ error: 'something went wrong' });
+        console.error(err);
+      });
+  };
+
+  exports.setUnfinished = (req, res) => {  
+    db.collection('finished')
+    .where('userHandle', '==', req.user.handle)
+    .where('eventId', '==', req.params.eventId)
+    .limit(1)
+    .get().then((data) => {
+      if(data.empty) {
+        return res.status(400).json({ error: 'Event not finished' })
+      } else {
+        return db
+            .doc(`/finished/${data.docs[0].id}`)
+            .delete()
+      }
+    }).then(() => {
+      return res.status(202).json({message: "set unfinished"})
+    }).catch((err) => {
+      console.error(err);
+      res.status(500).json({ error: err.code });
+    });
+
+  };
 

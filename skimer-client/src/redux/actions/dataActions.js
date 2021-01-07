@@ -4,6 +4,7 @@ import {
    ADD_EVENT,
    SET_SUBJECTS,
    SET_SUBJECT,
+   CLEAR_SUBJECT,
    LOADING_UI,
    REMOVE_EVENT,
 } from "../types"
@@ -72,6 +73,14 @@ export const getSubject = (subjectID) => (dispatch) => {
          })
       })
       .catch((err) => console.log(err))
+}
+
+export const clearSubject = () => (dispatch) => {
+   dispatch({ type: LOADING_UI })
+   dispatch({
+      type: CLEAR_SUBJECT,
+      payload: null,
+   })
 }
 
 export const deleteEvent = (eventId) => (dispatch) => {

@@ -26,6 +26,9 @@ export default function Subject(props) {
    const id = props.match.params.sid
    const subject = useSelector((state) => state.data.subject)
 
+   const name =
+      subject && subject.info && subject.info.name ? subject.info.name : ""
+
    const [showModal, setShowModal] = useState(false)
    const toggleModal = () => setShowModal(!showModal)
 
@@ -78,7 +81,7 @@ export default function Subject(props) {
       <Fragment>
          <Sidebar />
          <HomePanel />
-         <Navbar />
+         <Navbar badge={name} />
          <div className={classes.subject}>
             <div>
                <div className="info">

@@ -3,6 +3,8 @@ import {
    SET_AUTHENTICATED,
    SET_UNAUTHENTICATED,
    LOADING_USER,
+   SET_FINISHED,
+   SET_UNFINISHED,
 } from "../types"
 
 const initialState = {
@@ -34,7 +36,31 @@ export default function (state = initialState, action) {
             ...state,
             loading: true,
          }
+      case SET_FINISHED: {
+         return {
+            ...state,
+            loading: false,
+            user: {
+               ...state.user,
+               finished: [...state.user.finished, action.payload],
+            },
+         }
+      }
+      case SET_UNFINISHED: {
+         const finished = [...state.user.finished]
 
+         finished.splice(
+            finished.findIndex((finished) => finished === action.payload),
+            1
+         )
+         return {
+            ...state,
+            user: {
+               ...state.user,
+               finished,
+            },
+         }
+      }
       default:
          return state
    }

@@ -72,6 +72,10 @@ export default {
          width: 122,
          margin: "0 10px",
          boxSizing: "border-box",
+         "& div": {
+            border: "none",
+            outline: "none",
+         },
          "& svg, i": {
             background: theme.gradients.navyBlue,
             color: "white",
@@ -80,6 +84,12 @@ export default {
             borderRadius: "50%",
             cursor: "pointer",
             width: 19,
+         },
+         "&  .fa-check": {
+            background: theme.gradients.gray,
+         },
+         "&.finished  .fa-check": {
+            background: theme.gradients.navyBlue,
          },
       },
       "@media (max-width: 1400px)": {

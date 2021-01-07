@@ -8,19 +8,19 @@ import Avatar from "../util/Avatar"
 
 import style from "../../css/componentsStyle/eventsStyle/UpcomingEventStyle"
 
-import { deleteEvent } from "../../redux/actions/dataActions"
-
 const useStyles = createUseStyles(style)
 
-export default function UpcomingEvent({ event, handleEventDelete }) {
+export default function UpcomingEvent({
+   event,
+   handleEventDelete,
+   finished,
+   handleSetUnfinished,
+   handleSetFinished,
+}) {
    const classes = useStyles()
-   const dispatch = useDispatch()
 
-   const subjects = useSelector((state) => state.data.subjects)
    const users = useSelector((state) => state.data.users)
-
    const currentUser = useSelector((state) => state.user)
-   console.log(currentUser)
 
    const currentUserHandle =
       currentUser && currentUser.user ? currentUser.user.auth.handle : "xd"
@@ -47,7 +47,7 @@ export default function UpcomingEvent({ event, handleEventDelete }) {
 
    return (
       <div className={classes.UpcomingEvent}>
-         <div className="date">
+         <div className={`date ${finished}`}>
             <span>{deadlineDateName}</span>
             <span>{deadlineDate}</span>
          </div>
@@ -62,11 +62,20 @@ export default function UpcomingEvent({ event, handleEventDelete }) {
             <h5>{username}</h5>
             <span>Utworzono: {createdAtDate}</span>
          </div>
-         <div className="icons">
-            <i className="fas fa-check"></i>
+         <div className={`icons  ${finished}`}>
+            <div
+               onClick={() =>
+                  finished ? handleSetUnfinished() : handleSetFinished()
+               }
+               onKeyDown={(e) => console.log()}
+               role="button"
+               tabIndex={0}
+            >
+               <i className="fas fa-check"></i>
+            </div>
             <div
                onClick={() => handleEventDelete()}
-               onKeyDown={(e) => console.log()}
+               onKeyDown={() => handleEventDelete()}
                role="button"
                tabIndex={0}
             >
