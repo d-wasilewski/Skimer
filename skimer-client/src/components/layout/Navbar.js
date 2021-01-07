@@ -11,7 +11,7 @@ import { logoutUser } from "../../redux/actions/userActions"
 
 const useStyles = createUseStyles(style)
 
-export default function Navbar() {
+export default function Navbar({ badge }) {
    const classes = useStyles()
    const dispatch = useDispatch()
 
@@ -20,7 +20,10 @@ export default function Navbar() {
          <Link to="/">
             <img src={logo} alt="Skimer" className="logo" />
          </Link>
-         <h2>Skimer</h2>
+         <h2>
+            Skimer
+            {badge ? ` / ${badge}` : null}
+         </h2>
          <ul>
             <Link to={"/login"} onClick={() => dispatch(logoutUser())}>
                <li>

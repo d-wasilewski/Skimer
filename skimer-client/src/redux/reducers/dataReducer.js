@@ -4,6 +4,7 @@ import {
    ADD_EVENT,
    SET_SUBJECTS,
    SET_SUBJECT,
+   CLEAR_SUBJECT,
    LOADING_DATA,
    REMOVE_EVENT,
 } from "../types"
@@ -53,6 +54,12 @@ export default function (state = initialState, action) {
             loading: false,
             subject: action.payload,
          }
+      case CLEAR_SUBJECT:
+         return {
+            ...state,
+            loading: false,
+            subject: {},
+         }
       case REMOVE_EVENT: {
          const events = [...state.events]
 
@@ -60,13 +67,11 @@ export default function (state = initialState, action) {
             events.findIndex((event) => event.eventId === action.payload),
             1
          )
-         console.log(":(((((((")
          return {
             ...state,
             events,
          }
       }
-
       default:
          return state
    }

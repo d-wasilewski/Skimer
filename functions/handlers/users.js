@@ -115,8 +115,8 @@ exports.getAuthenticatedUser = (req, res) => {
             return db
                 .collection("finished")
                 .where('userHandle', '==', req.user.handle)
-                .where('deadline', '<=', nextWeek)
-                .where('deadline', '>=', new Date())
+                // .where('deadline', '<=', nextWeek)
+                // .where('deadline', '>=', new Date())
                 .get()
         }).then((data) => {
             user.finished = []

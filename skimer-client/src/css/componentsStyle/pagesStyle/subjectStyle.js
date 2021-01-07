@@ -19,6 +19,21 @@ export default {
             margin: 0,
             padding: 15,
             boxSizing: "border-box",
+            display: "grid",
+            gridTemplateColumns: "1fr 30px",
+
+            "& button": {
+               border: "none",
+               outline: "none",
+               background: "none",
+               padding: "none",
+
+               "& svg, i": {
+                  alignSelf: "center",
+                  cursor: "pointer",
+                  color: "#fff",
+               },
+            },
          },
       },
       "& .element": {

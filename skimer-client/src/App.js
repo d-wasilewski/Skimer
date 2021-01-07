@@ -2,9 +2,9 @@ import React from "react"
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom"
 
 import Home from "./components/pages/home"
-import Chat from "./components/pages/chat"
 import Login from "./components/pages/login"
 import Subject from "./components/pages/subject"
+import Timetable from "./components/pages/timetable"
 import PrivateRoute from "./components/util/PrivateRoute"
 
 import { Provider } from "react-redux"
@@ -38,7 +38,7 @@ function App() {
             <div className="App">
                <Switch>
                   <PrivateRoute exact path="/" component={Home} />
-                  <PrivateRoute exact path="/chat/:user" component={Chat} />
+                  <PrivateRoute exact path="/timetable" component={Timetable} />
                   <Route exact path="/login" component={Login} />
                   <PrivateRoute
                      exact

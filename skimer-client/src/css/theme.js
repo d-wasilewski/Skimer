@@ -17,6 +17,7 @@ export default {
    gradients: {
       navyBlue: "linear-gradient(45deg, #6a60fc 0%, #1296e2 100%)",
       blueCyan: "linear-gradient(90deg, #2c77e7 0%, #0385b8 100%)",
+      gray: "linear-gradient(45deg, #808080 0%, #b0b0b0 100%)",
    },
    shadows: {
       small: "rgba(0, 0, 0, 0.5) 0 0 2px",

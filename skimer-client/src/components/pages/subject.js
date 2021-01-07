@@ -1,4 +1,4 @@
-import React, { Fragment, useEffect } from "react"
+import React, { Fragment, useEffect, useState } from "react"
 import { createUseStyles } from "react-jss"
 import { useSelector, useDispatch } from "react-redux"
 
@@ -26,58 +26,82 @@ export default function Subject(props) {
    const id = props.match.params.sid
    const subject = useSelector((state) => state.data.subject)
 
+   const name =
+      subject && subject.info && subject.info.name ? subject.info.name : ""
+
+   const [showModal, setShowModal] = useState(false)
+   const toggleModal = () => setShowModal(!showModal)
+
    useEffect(() => {
       dispatch(getSubject(id))
       dispatch(getUsers())
    }, [dispatch])
 
    const renderLeaderList = () => {
-      return subject?.map((index) => (
-         <div className="element" key={index}>
-            <h5>dr. Mateusz Smoliński</h5>
-            <span>email@edu.p.lodz.pl</span>
-         </div>
-      ))
+      return subject && subject.info && subject.info.leaders
+         ? subject.info.leaders.map((item, index) => (
+              <div className="element" key={index}>
+                 <h5>{item.name}</h5>
+                 <span>{item.email}</span>
+              </div>
+           ))
+         : null
+   }
+
+   const renderHoursList = () => {
+      return subject && subject.info && subject.info.hours
+         ? subject.info.hours.map((item, index) => (
+              <div className="element" key={index}>
+                 <h5>{item.time}</h5>
+                 <span>{item.type}</span>
+              </div>
+           ))
+         : null
+   }
+
+   const renderEventList = () => {
+      return subject && subject.events
+         ? subject.events.map((item, index) => (
+              <UpcomingEvent
+                 event={item}
+                 key={item.eventId}
+                 handleEventDelete={() =>
+                    handleEventDelete(index, item.eventId)
+                 }
+              />
+           ))
+         : null
+   }
+
+   const handleEventDelete = (index, id) => {
+      dispatch(deleteEvent(id))
    }
 
    return (
       <Fragment>
          <Sidebar />
          <HomePanel />
-         <Navbar />
+         <Navbar badge={name} />
          <div className={classes.subject}>
             <div>
                <div className="info">
                   <h3>Prowadzący</h3>
-                  <div className="element">
-                     <h5>dr. Mateusz Smoliński</h5>
-                     <span>email@edu.p.lodz.pl</span>
-                  </div>
-                  <div className="element">
-                     <h5>dr. Mateusz Smoliński</h5>
-                     <span>email@edu.p.lodz.pl</span>
-                  </div>
+                  {renderLeaderList()}
                </div>
                <div className="hours">
                   <h3>Godziny zajęć</h3>
-                  <div className="element">
-                     <h5>Poniedziałek 14:00</h5>
-                     <span>Laboratoria grupa 1</span>
-                  </div>
-                  <div className="element">
-                     <h5>Wtorek 15:00</h5>
-                     <span>Wykład</span>
-                  </div>
+                  {renderHoursList()}
                </div>
             </div>
             <div>
                <div className="notes">
-                  <h3>Nadchodzące wydarzenia</h3>
-                  <UpcomingEvent />
-                  <UpcomingEvent />
-                  <UpcomingEvent />
-                  <UpcomingEvent />
-                  <UpcomingEvent />
+                  <h3>
+                     <span>Nadchodzące wydarzenia</span>
+                     <button onClick={toggleModal}>
+                        <i className="fas fa-plus"></i>
+                     </button>
+                  </h3>
+                  {renderEventList()}
                </div>
             </div>
          </div>

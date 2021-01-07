@@ -5,6 +5,8 @@ import {
    LOADING_UI,
    SET_UNAUTHENTICATED,
    LOADING_USER,
+   SET_FINISHED,
+   SET_UNFINISHED,
 } from "../types"
 import axios from "axios"
 
@@ -51,6 +53,30 @@ export const uploadImage = (formData) => (dispatch) => {
       .post("/user/image", formData)
       .then(() => {
          dispatch(getUserData())
+      })
+      .catch((err) => console.log(err))
+}
+
+export const setFinished = (event) => (dispatch) => {
+   axios
+      .post("/event/finish", event)
+      .then((res) => {
+         dispatch({
+            type: SET_FINISHED,
+            payload: event.eventId,
+         })
+      })
+      .catch((err) => console.log(err))
+}
+
+export const setUnfinished = (eventId) => (dispatch) => {
+   axios
+      .delete(`/event/unfinish/${eventId}`)
+      .then((res) => {
+         dispatch({
+            type: SET_UNFINISHED,
+            payload: eventId,
+         })
       })
       .catch((err) => console.log(err))
 }
