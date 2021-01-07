@@ -13,8 +13,8 @@ const isEmail = (email) => {
 exports.validateLoginData = (data) => {
     let errors = {}
 
-    if(isEmpty(data.email)) errors.email = "Must not be empty"
-    if(isEmpty(data.password)) errors.password = "Must not be empty"
+    if(isEmpty(data.email)) errors.email = "To pole nie może być puste"
+    if(isEmpty(data.password)) errors.password = "To pole nie może być puste"
 
     return {
         errors, 

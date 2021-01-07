@@ -59,13 +59,15 @@ function Login(props) {
                   type="password"
                   name="password"
                   id="password"
-                  label="Password"
+                  label="Hasło"
                   required
                />
                {errors && errors.password ? (
                   <div className="emptyError"> {errors.password}</div>
                ) : null}
-               {errors && errors.general ? errors.general : null}
+               {errors && errors.general ? (
+                  <div className="wrongError"> {errors.general}</div>
+               ) : null}
                <Button>Zaloguj się</Button>
             </form>
          </div>
