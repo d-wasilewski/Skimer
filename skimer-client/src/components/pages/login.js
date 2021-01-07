@@ -56,7 +56,6 @@ function Login(props) {
                {errors && errors.email ? (
                   <div className="emptyError"> {errors.email}</div>
                ) : null}
-
                <div className="form">
                   <input
                      onChange={(e) => setPassword(e.target.value)}
