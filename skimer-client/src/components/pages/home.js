@@ -27,6 +27,7 @@ export default function Home() {
 
    const subjects = useSelector((state) => state.data.subjects)
    const events = useSelector((state) => state.data.events)
+   const loading = useSelector((state) => state.user.loading)
 
    const [showModal, setShowModal] = useState(false)
 
@@ -49,13 +50,17 @@ export default function Home() {
    }
 
    const renderEventsList = () => {
-      return events?.map((item, index) => (
-         <UpcomingEvent
-            event={item}
-            key={item.eventId}
-            handleEventDelete={() => handleEventDelete(index, item.eventId)}
-         />
-      ))
+      return events.length > 0 ? (
+         events?.map((item, index) => (
+            <UpcomingEvent
+               event={item}
+               key={item.eventId}
+               handleEventDelete={() => handleEventDelete(index, item.eventId)}
+            />
+         ))
+      ) : (
+         <div className="noEvents">Nie masz żadnych nowych wydarzeń</div>
+      )
    }
 
    const handleEventDelete = (index, id) => {
@@ -67,32 +72,38 @@ export default function Home() {
          <Sidebar />
          <HomePanel />
          <Navbar />
-         <div className={classes.home}>
-            <div>
-               <div className="subjects">
-                  <h3>
-                     <span>Lista przedmiotów</span>
-                  </h3>
-                  {renderSubjectsList()}
-               </div>
+         {loading ? (
+            <div className={classes.spinner}>
+               <i className="fas fa-spinner fa-pulse loading"></i>
             </div>
-            <div>
-               <div className="notes">
-                  <h3>
-                     <span>Nadchodzące wydarzenia</span>
-                     <button onClick={toggleModal}>
-                        <i className="fas fa-plus"></i>
-                     </button>
-                  </h3>
-                  {renderEventsList()}
+         ) : (
+            <div className={classes.home}>
+               <div>
+                  <div className="subjects">
+                     <h3>
+                        <span>Lista przedmiotów</span>
+                     </h3>
+                     {renderSubjectsList()}
+                  </div>
                </div>
+               <div>
+                  <div className="notes">
+                     <h3>
+                        <span>Nadchodzące wydarzenia</span>
+                        <button onClick={toggleModal}>
+                           <i className="fas fa-plus"></i>
+                        </button>
+                     </h3>
+                     {renderEventsList()}
+                  </div>
+               </div>
+               {showModal ? (
+                  <Modal>
+                     <AddEvent toggleModal={toggleModal} />
+                  </Modal>
+               ) : null}
             </div>
-            {showModal ? (
-               <Modal>
-                  <AddEvent toggleModal={toggleModal} />
-               </Modal>
-            ) : null}
-         </div>
+         )}
       </Fragment>
    )
 }

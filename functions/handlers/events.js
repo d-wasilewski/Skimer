@@ -1,4 +1,5 @@
 const { db } = require('../util/admin');
+const { validateModalData } = require('../util/validators');
 
 exports.getEvents = (req, res) => {
     
@@ -45,6 +46,10 @@ exports.getEvents = (req, res) => {
         createdAt: new Date().toISOString(),
         deadline: req.body.deadline
     };
+
+    const {valid, errors} = validateModalData(newEvent)
+
+    if(!valid) return res.status(400).json(errors)
   
     db.collection('events')
       .add(newEvent)

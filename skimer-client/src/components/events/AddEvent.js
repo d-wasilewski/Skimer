@@ -15,29 +15,28 @@ export default function AddEvent(props) {
 
    const { toggleModal } = props
    const subjects = useSelector((state) => state.data.subjects)
+   const UIstate = useSelector((state) => state.UI)
+
+   const errorsEmail = UIstate && UIstate.email ? UIstate.email : null
+   const errorsDeadline = UIstate && UIstate.deadline ? UIstate.deadline : null
 
    const [description, setDescription] = useState("")
    const [deadline, setDeadline] = useState(new Date())
    const [subjectHandle, setSubjectHandle] = useState("pel")
-   const [error, setError] = useState("")
 
    const handleSubmit = (e) => {
       e.preventDefault()
-      if (!error) console.log("wysłano")
       const newEvent = {
          description,
          deadline,
          subjectHandle,
       }
       dispatch(addEvent(newEvent))
-      toggleModal()
+
+      if (!(errorsEmail || errorsDeadline)) {
+         toggleModal()
+      }
    }
-
-   let nextWeek = new Date()
-   console.log(nextWeek)
-
-   console.log(nextWeek.getTime() + 7 * 1000 * 60 * 60 * 24 * 7)
-   console.log(new Date(nextWeek.getTime() + 1000 * 60 * 60 * 24 * 7))
 
    return (
       <div className={classes.addEvent}>
@@ -75,7 +74,7 @@ export default function AddEvent(props) {
                   autoComplete="off"
                   label="Description"
                />
-               <Button>Dodaj zadanie</Button>
+               <Button>Dodaj zadanie {errorsEmail}</Button>
             </form>
          </div>
       </div>

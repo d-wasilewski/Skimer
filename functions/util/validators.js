@@ -21,3 +21,16 @@ exports.validateLoginData = (data) => {
         valid: Object.keys(errors).length === 0 ? true : false
     }
 }
+
+exports.validateModalData = (data) => {
+    let errors = {}
+
+    if(isEmpty(data.description)) errors.email = "To pole nie może być puste"
+    if(new Date(data.deadline) == undefined) errors.deadline =  "Niepoprawna data"
+    if(new Date() > new Date(data.deadline)) errors.deadline = "Niepoprawa data"
+
+    return {
+        errors,
+        valid: Object.keys(errors).length === 0 ? true : false
+    }
+}

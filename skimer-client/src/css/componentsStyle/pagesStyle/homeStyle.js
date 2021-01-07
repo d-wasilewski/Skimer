@@ -35,7 +35,11 @@ export default {
                },
             },
          },
+         "& .noEvents": {
+            padding: 16,
+         },
       },
+
       "@media (max-width: 1050px)": {
          marginRight: 50,
       },
@@ -46,6 +50,18 @@ export default {
          gridTemplateColumns: "100%",
          gridTemplateRows: "auto auto",
          rowGap: "15px",
+      },
+   },
+   spinner: {
+      height: "100vh",
+      width: "100wh",
+      display: "flex",
+      justifyContent: "center",
+      alignItems: "center",
+      marginRight: 345,
+      fontSize: 80,
+      "@media (max-width: 1050px)": {
+         marginRight: 50,
       },
    },
 }

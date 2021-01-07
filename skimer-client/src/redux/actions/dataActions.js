@@ -6,6 +6,9 @@ import {
    SET_SUBJECT,
    LOADING_UI,
    REMOVE_EVENT,
+   SET_ERRORS,
+   CLEAR_ERRORS,
+   LOADING_DATA,
 } from "../types"
 import axios from "axios"
 
@@ -44,8 +47,14 @@ export const addEvent = (event) => (dispatch) => {
             type: ADD_EVENT,
             payload: res.data,
          })
+         dispatch({ type: CLEAR_ERRORS })
       })
-      .catch((err) => console.log(err))
+      .catch((err) => {
+         dispatch({
+            type: SET_ERRORS,
+            payload: err.response.data,
+         })
+      })
 }
 
 export const getSubjects = () => (dispatch) => {
