@@ -30,7 +30,7 @@ export default function Home() {
 
    const subjects = useSelector((state) => state.data.subjects)
    const events = useSelector((state) => state.data.events)
-   const loading = useSelector((state) => state.user.loading)
+   const loading = useSelector((state) => state.data.loading)
    const { user } = useSelector((state) => state.user)
    const finishedEvents = user && user.finished ? user.finished : []
 
@@ -57,30 +57,23 @@ export default function Home() {
 
    const renderEventsList = () => {
       return events.length > 0 ? (
-         events?.map((item, index) => (
-            <UpcomingEvent
-               event={item}
-               key={item.eventId}
-               handleEventDelete={() => handleEventDelete(index, item.eventId)}
-            />
-         ))
+         events?.map((item) => {
+            const isFinished =
+               finishedEvents.indexOf(item.eventId) != -1 ? "finished" : ""
+            return (
+               <UpcomingEvent
+                  event={item}
+                  key={item.eventId}
+                  finished={isFinished}
+                  handleEventDelete={() => handleEventDelete(item.eventId)}
+                  handleSetFinished={() => handleSetFinished(item)}
+                  handleSetUnfinished={() => handleSetUnfinished(item.eventId)}
+               />
+            )
+         })
       ) : (
          <div className="noEvents">Nie masz żadnych nowych wydarzeń</div>
       )
-      return events?.map((item, index) => {
-         const isFinished =
-            finishedEvents.indexOf(item.eventId) != -1 ? "finished" : ""
-         return (
-            <UpcomingEvent
-               event={item}
-               key={item.eventId}
-               finished={isFinished}
-               handleEventDelete={() => handleEventDelete(item.eventId)}
-               handleSetFinished={() => handleSetFinished(item)}
-               handleSetUnfinished={() => handleSetUnfinished(item.eventId)}
-            />
-         )
-      })
    }
 
    const handleEventDelete = (id) => {

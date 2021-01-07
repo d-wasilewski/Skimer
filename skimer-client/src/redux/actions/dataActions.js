@@ -14,7 +14,7 @@ import {
 import axios from "axios"
 
 export const getUsers = () => (dispatch) => {
-   dispatch({ type: LOADING_UI })
+   dispatch({ type: LOADING_DATA })
    axios
       .get("/users")
       .then((res) => {
@@ -27,7 +27,7 @@ export const getUsers = () => (dispatch) => {
 }
 
 export const getEvents = () => (dispatch) => {
-   dispatch({ type: LOADING_UI })
+   dispatch({ type: LOADING_DATA })
    axios
       .get("/events")
       .then((res) => {
@@ -59,7 +59,7 @@ export const addEvent = (event) => (dispatch) => {
 }
 
 export const getSubjects = () => (dispatch) => {
-   dispatch({ type: LOADING_UI })
+   dispatch({ type: LOADING_DATA })
    axios
       .get("/subjects")
       .then((res) => {
@@ -72,7 +72,7 @@ export const getSubjects = () => (dispatch) => {
 }
 
 export const getSubject = (subjectID) => (dispatch) => {
-   dispatch({ type: LOADING_UI })
+   dispatch({ type: LOADING_DATA })
    axios
       .get(`/subject/${subjectID}`)
       .then((res) => {
