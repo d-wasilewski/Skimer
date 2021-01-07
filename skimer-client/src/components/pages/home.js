@@ -20,7 +20,11 @@ import {
    deleteEvent,
 } from "../../redux/actions/dataActions"
 
-import { setFinished, setUnfinished } from "../../redux/actions/userActions"
+import {
+   getUserData,
+   setFinished,
+   setUnfinished,
+} from "../../redux/actions/userActions"
 
 const useStyles = createUseStyles(style)
 

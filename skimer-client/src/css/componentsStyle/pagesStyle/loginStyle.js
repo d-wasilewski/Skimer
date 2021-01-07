@@ -65,6 +65,14 @@ export default {
                position: "relative",
                overflow: "hidden",
                margin: 10,
+               "&.error": {
+                  "& label:after": {
+                     borderBottom: "3px solid red",
+                  },
+                  "& input:focus + .label-name .content-name, & input:valid + .label-name .content-name": {
+                     color: "red",
+                  },
+               },
                "& input": {
                   width: "100%",
                   height: "100%",

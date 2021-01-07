@@ -35,6 +35,9 @@ export default {
                },
             },
          },
+         "& .noEvents": {
+            padding: 16,
+         },
       },
       "& .element": {
          margin: "3px 2px",

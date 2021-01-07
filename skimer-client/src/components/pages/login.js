@@ -8,6 +8,10 @@ import logo from "../../images/logo.svg"
 import TextInput from "../util/TextInput"
 import { loginUser } from "../../redux/actions/userActions"
 
+const token = localStorage.FBIdToken
+if (token && window.location.pathname == "/login") {
+   window.location.href = "/"
+}
 const useStyles = createUseStyles(style)
 
 function Login(props) {
@@ -39,7 +43,7 @@ function Login(props) {
             <div className="login-zalogujsie">Zaloguj się</div>
 
             <form noValidate onSubmit={handleSubmit}>
-               <div className="form">
+               <div className={errors && errors.email ? "error form" : "form"}>
                   <input
                      onChange={(e) => setEmail(e.target.value)}
                      value={email}
@@ -57,7 +61,9 @@ function Login(props) {
                   <div className="emptyError"> {errors.email}</div>
                ) : null}
 
-               <div className="form">
+               <div
+                  className={errors && errors.password ? "error form" : "form"}
+               >
                   <input
                      onChange={(e) => setPassword(e.target.value)}
                      value={password}

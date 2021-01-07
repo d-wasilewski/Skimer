@@ -69,6 +69,17 @@ exports.getEvents = (req, res) => {
         } else {
           return document.delete()
         }
+      }).then(() => {
+        return db.collection('finished')
+        .where('eventId', '==', req.params.eventId)
+        .get()
+      }).then((data) => {
+        const batch = db.batch();
+        data.forEach((doc) => {
+          const finished = db.doc(`/finished/${doc.id}`)
+          batch.delete(finished)
+        })
+        return batch.commit()
       })
       .then(() => {
         return res.status(202).json({message: "deleted"})

@@ -68,24 +68,28 @@ export default function Subject(props) {
    }
 
    const renderEventList = () => {
-      return subject && subject.events
-         ? subject.events.map((item, index) => {
-              const isFinished =
-                 finishedEvents.indexOf(item.eventId) != -1 ? "finished" : ""
-              return (
-                 <UpcomingEvent
-                    event={item}
-                    key={item.eventId}
-                    finished={isFinished}
-                    handleEventDelete={() => handleEventDelete(item.eventId)}
-                    handleSetFinished={() => handleSetFinished(item)}
-                    handleSetUnfinished={() =>
-                       handleSetUnfinished(item.eventId)
-                    }
-                 />
-              )
-           })
-         : null
+      return subject.events?.length > 0 ? (
+         subject &&
+            subject.events &&
+            subject.events?.map((item) => {
+               const isFinished =
+                  finishedEvents.indexOf(item.eventId) != -1 ? "finished" : ""
+               return (
+                  <UpcomingEvent
+                     event={item}
+                     key={item.eventId}
+                     finished={isFinished}
+                     handleEventDelete={() => handleEventDelete(item.eventId)}
+                     handleSetFinished={() => handleSetFinished(item)}
+                     handleSetUnfinished={() =>
+                        handleSetUnfinished(item.eventId)
+                     }
+                  />
+               )
+            })
+      ) : (
+         <div className="noEvents">Nie masz żadnych nowych wydarzeń</div>
+      )
    }
 
    const handleEventDelete = (index, id) => {
