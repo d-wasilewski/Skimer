@@ -2,9 +2,9 @@ import React from "react"
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom"
 
 import Home from "./components/pages/home"
-import Chat from "./components/pages/chat"
 import Login from "./components/pages/login"
 import Subject from "./components/pages/subject"
+import Timetable from "./components/pages/timetable"
 
 import { Provider } from "react-redux"
 import store from "./redux/store"
@@ -38,9 +38,9 @@ function App() {
             <div className="App">
                <Switch>
                   <Route exact path="/" component={Home} />
-                  <Route exact path="/chat/:user" component={Chat} />
                   <Route path="/login" component={Login} />
                   <Route path="/subject/:sid" component={Subject} />
+                  <Route path="/timetable" component={Timetable} />
                </Switch>
             </div>
          </Router>
