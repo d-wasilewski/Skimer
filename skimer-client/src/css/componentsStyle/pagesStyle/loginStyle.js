@@ -68,6 +68,13 @@ export default {
                marginTop: 38,
                marginBottom: 50,
             },
+            "& .wrongError": {
+               height: 16,
+               color: "red",
+               fontSize: 16,
+               textAlign: "center",
+               marginTop: 4,
+            },
          },
       },
    },

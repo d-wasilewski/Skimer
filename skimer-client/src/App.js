@@ -5,6 +5,7 @@ import Home from "./components/pages/home"
 import Chat from "./components/pages/chat"
 import Login from "./components/pages/login"
 import Subject from "./components/pages/subject"
+import PrivateRoute from "./components/util/PrivateRoute"
 
 import { Provider } from "react-redux"
 import store from "./redux/store"
@@ -19,7 +20,6 @@ axios.defaults.baseURL = "http://localhost:5000/skimer-a5934/europe-west1/api"
 const token = localStorage.FBIdToken
 if (token) {
    const decodedToken = jwtDecode(token)
-   console.log(decodedToken)
    if (decodedToken.exp * 1000 < Date.now()) {
       store.dispatch(logoutUser())
       console.log("przenosze")
@@ -37,10 +37,14 @@ function App() {
          <Router>
             <div className="App">
                <Switch>
-                  <Route exact path="/" component={Home} />
-                  <Route exact path="/chat/:user" component={Chat} />
-                  <Route path="/login" component={Login} />
-                  <Route path="/subject/:sid" component={Subject} />
+                  <PrivateRoute exact path="/" component={Home} />
+                  <PrivateRoute exact path="/chat/:user" component={Chat} />
+                  <Route exact path="/login" component={Login} />
+                  <PrivateRoute
+                     exact
+                     path="/subject/:sid"
+                     component={Subject}
+                  />
                </Switch>
             </div>
          </Router>
