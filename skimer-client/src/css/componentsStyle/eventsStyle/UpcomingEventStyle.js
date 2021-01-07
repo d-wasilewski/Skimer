@@ -11,6 +11,7 @@ export default {
       gridTemplateRows: "90px",
       justifyContent: "left",
       alignItems: "center",
+      textOverflow: "ellipsis",
 
       "& .date": {
          display: "grid",
@@ -40,6 +41,9 @@ export default {
          "& span": {
             color: theme.pallette.grayDarker,
             fontSize: 13,
+            textOverflow: "ellipsis",
+            whiteSpace: "nowrap",
+            overflow: "hidden",
          },
       },
       "& .avatar": {},
@@ -57,12 +61,15 @@ export default {
          },
       },
       "& .icons": {
-         display: "grid",
-         gridTemplateColumns: "1fr 1fr",
-         gridTemplateRows: "90px",
-         justifyContent: "center",
+         // display: "grid",
+         // gridTemplateColumns: "1fr 1fr",
+         // gridTemplateRows: "90px",
+         // justifyContent: "center",
+         display: "flex",
+         justifyContent: "flex-end",
          alignItems: "center",
          fontSize: 19,
+         width: 122,
          margin: "0 10px",
          boxSizing: "border-box",
          "& svg, i": {
