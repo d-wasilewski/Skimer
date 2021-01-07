@@ -8,7 +8,7 @@ import { uploadImage, getUserData } from "../../redux/actions/userActions"
 
 const useStyles = createUseStyles(style)
 
-export default function ProgressAvatar({ avatarImage, progress }) {
+export default function ProgressAvatar({ avatarImage, progress, initials }) {
    const classes = useStyles()
    const dispatch = useDispatch()
 
@@ -39,7 +39,11 @@ export default function ProgressAvatar({ avatarImage, progress }) {
                style={{ strokeDashoffset: transformation }}
             ></circle>
          </svg>
-         <Avatar handler={handleUpdateImage} avatarImage={avatarImage} />
+         <Avatar
+            handler={handleUpdateImage}
+            avatarImage={avatarImage}
+            initials={initials}
+         />
          <h5>Postęp: {progress}%</h5>
          <input type="file" ref={elInput} onChange={handleChange} />
       </div>

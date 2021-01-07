@@ -6,6 +6,7 @@ export default {
       gridTemplateColumns: "33% 66%",
       columnGap: 15,
       margin: 100,
+      marginTop: 200,
       marginRight: 445,
       "& .info, .hours, .notes": {
          background: "#fff",
@@ -20,24 +21,21 @@ export default {
             boxSizing: "border-box",
          },
       },
-      "& .leader": {
+      "& .element": {
          margin: "3px 2px",
-         display: "grid",
+         display: "flex",
          background: theme.pallette.grayLight,
-         gridTemplateColumns: "85px 1fr",
-         "& .name": {
-            display: "grid",
-            gridTemplateColumns: "1fr",
-            "& h5": {
-               fontSize: 16,
-               fontWeight: 500,
-               margin: 0,
-               alignSelf: "end",
-            },
-            "& span": {
-               color: theme.pallette.grayDarker,
-               fontSize: 13,
-            },
+         flexDirection: "column",
+         padding: 10,
+         "& h5": {
+            fontSize: 16,
+            fontWeight: 500,
+            margin: 0,
+            alignSelf: "end",
+         },
+         "& span": {
+            color: theme.pallette.grayDarker,
+            fontSize: 13,
          },
       },
       "& .info": {

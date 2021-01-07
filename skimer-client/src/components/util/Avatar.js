@@ -5,8 +5,7 @@ import style from "../../css/componentsStyle/utilStyle/AvatarStyle"
 
 const useStyles = createUseStyles(style)
 
-export default function Avatar({ size, avatarImage, handler }) {
-   let [initials, setInitials] = useState("MD")
+export default function Avatar({ size, avatarImage, handler, initials }) {
    let override = {}
    if (size) {
       let scale = size / 86
