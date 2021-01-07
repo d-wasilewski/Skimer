@@ -18,11 +18,12 @@ viewBox="0 0 334 334"
   <style type="text/css">
    <![CDATA[
     @font-face { font-family:"Franklin Gothic Heavy";font-variant:normal;font-weight:normal;src:url("#FontID0") format(svg)}
-    .fil2 {fill:#008DD0}
-    .fil3 {fill:#71D0F6}
-    .fil1 {fill:white}
+    .fil5 {fill:#008DD0}
+    .fil2 {fill:#2C77E7}
+    .fil3 {fill:#71C5E6}
     .fil4 {fill:white}
     .fil0 {fill:white}
+    .fil1 {fill:white}
     .fnt0 {font-weight:normal;font-size:176.368px;font-family:'Franklin Gothic Heavy'}
    ]]>
   </style>
@@ -33,16 +34,14 @@ viewBox="0 0 334 334"
    <path class="fil0" d="M27 128l193 -107 23 37 15 25 10 -15 0 0 6 -9 5 -8 23 14 -5 9 -6 8 -18 27 35 56c-26,66 -122,122 -122,122l-47 26 -112 -185z"/>
    <path id="1" class="fil1" d="M19 114l194 -107 13 -7 8 13 22 36 3 4 1 -2 6 -9 8 -12 13 8 24 14 14 8 -9 14 -6 8 -5 9 -13 18 29 48 4 6 -2 8c-28,71 -129,129 -129,130l-1 0 -46 26 -14 7 -8 -13 -112 -185 -8 -14 14 -8zm8 14l193 -107 23 37 15 25 10 -15 0 0 6 -9 5 -8 23 14 -5 9 -6 8 -18 27 35 56c-26,66 -122,122 -122,122l-47 26 -112 -185z"/>
   </g>
-  <g>
-   <path class="fil2" d="M27 128l193 -107 87 144c-25,66 -122,122 -122,122l-46 26 -112 -185z"/>
-   <path class="fil3" d="M307 165c-25,66 -122,122 -122,122 0,0 64,-51 63,-85 19,0 52,-23 59,-37z"/>
-   <rect class="fil3" transform="matrix(2.47257 -1.36443 1.75278 2.88618 26.671 128.173)" width="78.24" height="12.6"/>
-   <g transform="matrix(0.978492 -0.360569 0.378259 0.932732 -84.183 162.964)">
-    <text x="167" y="167"  class="fil4 fnt0">S</text>
-   </g>
-   <polygon class="fil3" points="268,68 291,82 226,178 203,164 194,202 226,178 203,164 "/>
-   <polygon class="fil2" points="279,51 302,65 297,74 291,82 268,68 273,59 "/>
-   <path class="fil2" d="M225 178l-22 -14 -9 37c0,1 0,1 0,1l32 -23c-1,-1 -1,-1 -1,-1zm0 0l-22 -14 0 0c5,1 9,3 13,5 4,2 7,5 9,9z"/>
+  <path class="fil2" d="M27 128l193 -107 87 144c-25,66 -122,122 -122,122l-46 26 -112 -185z"/>
+  <path class="fil3" d="M307 165c-25,66 -122,122 -122,122 0,0 64,-51 63,-85 19,0 52,-23 59,-37z"/>
+  <rect class="fil3" transform="matrix(2.47257 -1.36443 1.75278 2.88618 26.671 128.173)" width="78.24" height="12.6"/>
+  <g transform="matrix(0.978492 -0.360569 0.378259 0.932732 -84.183 162.964)">
+   <text x="167" y="167"  class="fil4 fnt0">S</text>
   </g>
+  <polygon class="fil3" points="268,68 291,82 226,178 203,164 194,202 226,178 203,164 "/>
+  <polygon class="fil2" points="279,51 302,65 297,74 291,82 268,68 273,59 "/>
+  <path class="fil5" d="M225 178l-22 -14 -9 37c0,1 0,1 0,1l32 -23c-1,-1 -1,-1 -1,-1zm0 0l-22 -14 0 0c5,1 9,3 13,5 4,2 7,5 9,9z"/>
  </g>
 </svg>

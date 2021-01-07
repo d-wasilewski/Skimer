@@ -22,7 +22,7 @@ export default function AddEvent(props) {
 
    const [description, setDescription] = useState("")
    const [deadline, setDeadline] = useState(new Date())
-   const [subjectHandle, setSubjectHandle] = useState("pel")
+   const [subjectHandle, setSubjectHandle] = useState("kad")
 
    const handleSubmit = (e) => {
       e.preventDefault()

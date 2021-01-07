@@ -18,7 +18,11 @@ export default function HomePanel() {
 
    let finished = []
    finished = user && user.finished ? user.finished : []
-   // const progress = finished && events ? finished.length() / events.length() : 0
+   let progress =
+      finished && events
+         ? ((finished.length / events.length) * 100).toString().split(".")[0]
+         : 100
+   progress = isNaN(progress) ? 100 : progress
 
    const name = username.split(" ")[0]
    const surname = username.split(" ")[1]
@@ -38,7 +42,7 @@ export default function HomePanel() {
             </h4>
             <ProgressAvatar
                avatarImage={avatarImage}
-               progress="60"
+               progress={progress}
                initials={initials}
             />
          </div>
