@@ -18,25 +18,32 @@ export default function UpcomingEvent({ event, handleEventDelete }) {
 
    const subjects = useSelector((state) => state.data.subjects)
    const users = useSelector((state) => state.data.users)
+
+   const currentUser = useSelector((state) => state.user)
+   console.log(currentUser)
+
+   const currentUserHandle =
+      currentUser && currentUser.user ? currentUser.user.auth.handle : "xd"
+   const authenticated =
+      currentUser && currentUser.authenticated ? currentUser.authenticated : ""
    dayjs.locale("pl")
 
-   // console.log(subjects)
-   // console.log(event)
-
    let user = users.find((user) => user.handle == event.author)
-   // console.log(user)
-   // let xD = user.name
    const username = user && user.name ? user.name : "not set"
-   console.log(user)
 
    const createdAt = event && event.createdAt ? event.createdAt : new Date()
    const deadline = event && event.deadline ? event.deadline : new Date()
    let createdAtDate = dayjs(createdAt).format("DD-MM-YYYY H:m")
    let deadlineDateName = dayjs(deadline).format("dd")
-   let deadlineDate = dayjs(deadline).format("DD.MM") //zmienic czas
+   let deadlineDate = dayjs(deadline).format("DD.MM")
 
    let description = event ? event.description : ""
    let authorImage = event ? event.authorImage : ""
+
+   const trashIcon =
+      authenticated && event.author == currentUserHandle ? (
+         <i className="fas fa-trash-alt"></i>
+      ) : null
 
    return (
       <div className={classes.UpcomingEvent}>
@@ -63,7 +70,7 @@ export default function UpcomingEvent({ event, handleEventDelete }) {
                role="button"
                tabIndex={0}
             >
-               <i className="fas fa-trash-alt"></i>
+               {trashIcon}
             </div>
          </div>
       </div>
