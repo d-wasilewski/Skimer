@@ -3,22 +3,27 @@ import { createUseStyles } from "react-jss"
 import Calendar from "react-calendar"
 import { useSelector, useDispatch } from "react-redux"
 import "../../css/componentsStyle/calendar.css"
-
-import ProgressAvatar from "../util/ProgressAvatar"
-
 import style from "../../css/componentsStyle/layoutStyle/HomePanelStyle"
+import ProgressAvatar from "../util/ProgressAvatar"
 
 const useStyles = createUseStyles(style)
 
 export default function HomePanel() {
    const classes = useStyles()
    const { user } = useSelector((state) => state.user)
-   const username = user && user.auth ? user.auth.name : "not set"
+   let events = []
+   events = useSelector((state) => state.data.events)
+   const username = user && user.auth ? user.auth.name : "loading..."
+   const avatarImage = user && user.auth ? user.auth.imageUrl : ""
+
+   let finished = []
+   finished = user && user.finished ? user.finished : []
+   // const progress = finished && events ? finished.length() / events.length() : 0
 
    const name = username.split(" ")[0]
    const surname = username.split(" ")[1]
 
-   console.log(user)
+   let initials = name && surname ? name[0] + surname[0] : ""
 
    return (
       <div className={classes.homePanel} id="rightPanel">
@@ -31,7 +36,11 @@ export default function HomePanel() {
                <br />
                {surname}
             </h4>
-            <ProgressAvatar />
+            <ProgressAvatar
+               avatarImage={avatarImage}
+               progress="60"
+               initials={initials}
+            />
          </div>
 
          <Calendar className="calendar" minDetail="month" />

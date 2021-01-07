@@ -1,6 +1,5 @@
 import React, { useState, useRef, useEffect, Fragment } from "react"
 import { createUseStyles } from "react-jss"
-import { navigate } from "@reach/router"
 import { useSelector, useDispatch } from "react-redux"
 
 import style from "../../css/componentsStyle/pagesStyle/homeStyle"
@@ -19,7 +18,6 @@ import {
    getEvents,
    deleteEvent,
 } from "../../redux/actions/dataActions"
-import SubjectListElementStyle from "../../css/componentsStyle/subjectsStyle/SubjectListElementStyle"
 
 const useStyles = createUseStyles(style)
 
@@ -28,7 +26,6 @@ export default function Home() {
    const dispatch = useDispatch()
 
    const subjects = useSelector((state) => state.data.subjects)
-   const users = useSelector((state) => state.data.users)
    const events = useSelector((state) => state.data.events)
 
    const [showModal, setShowModal] = useState(false)
@@ -43,7 +40,11 @@ export default function Home() {
 
    const renderSubjectsList = () => {
       return subjects?.map((item) => (
-         <SubjectListElement name={item.name} key={item.name} />
+         <SubjectListElement
+            name={item.name}
+            key={item.name}
+            id={item.subjectId}
+         />
       ))
    }
 

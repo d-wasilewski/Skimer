@@ -11,6 +11,8 @@ export default {
       whiteSpace: "nowrap",
       overflow: "hidden",
       textOverflow: "ellipsis",
+      display: "block",
+      color: "#000",
 
       "&:before": {
          content: "''",
