@@ -7,7 +7,7 @@ exports.getEvents = (req, res) => {
     db.collection('events')
       // .where('deadline', '<=', nextWeek)
       // .where('deadline', '>=', new Date())
-      .orderBy('deadline', 'desc')
+      .orderBy('deadline', 'asc')
       .get()
       .then((data) => {
           let events = []

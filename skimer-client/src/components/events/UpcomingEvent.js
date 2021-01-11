@@ -37,7 +37,7 @@ export default function UpcomingEvent({
 
    const createdAt = event && event.createdAt ? event.createdAt : new Date()
    const deadline = event && event.deadline ? event.deadline : new Date()
-   let createdAtDate = dayjs(createdAt).format("DD-MM-YYYY H:m")
+   let createdAtDate = dayjs(createdAt).format("DD-MM-YYYY HH:mm")
    let deadlineDateName = dayjs(deadline).format("dd")
    let deadlineDate = dayjs(deadline).format("DD.MM")
 
@@ -68,7 +68,7 @@ export default function UpcomingEvent({
             <span>{description}</span>
          </div>
          <div className="avatar">
-            <Avatar size="56" avatarImage={authorImage} initials={initials}/>
+            <Avatar size="56" avatarImage={authorImage} initials={initials} />
          </div>
          <div className="author">
             <h5>{username}</h5>
