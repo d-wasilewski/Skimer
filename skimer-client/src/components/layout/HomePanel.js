@@ -1,7 +1,7 @@
 import React from "react"
 import { createUseStyles } from "react-jss"
 import Calendar from "react-calendar"
-import { useSelector, useDispatch } from "react-redux"
+import { useSelector } from "react-redux"
 import "../../css/componentsStyle/calendar.css"
 import style from "../../css/componentsStyle/layoutStyle/HomePanelStyle"
 import ProgressAvatar from "../util/ProgressAvatar"

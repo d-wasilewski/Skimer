@@ -1,10 +1,9 @@
-import React, { useState, useEffect } from "react"
+import React, { useState } from "react"
 import { createUseStyles } from "react-jss"
 import { useSelector, useDispatch } from "react-redux"
 import style from "../../css/componentsStyle/eventsStyle/AddEventStyle"
 import TextInput from "../util/TextInput"
 import Button from "../util/Button"
-import { getSubjects } from "../../redux/actions/dataActions"
 import { addEvent } from "../../redux/actions/dataActions"
 
 const useStyles = createUseStyles(style)

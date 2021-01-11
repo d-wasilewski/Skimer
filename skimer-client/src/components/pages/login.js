@@ -1,11 +1,10 @@
-import React, { useState, useEffect } from "react"
+import React, { useState } from "react"
 import { createUseStyles } from "react-jss"
 import { useSelector, useDispatch } from "react-redux"
 
 import style from "../../css/componentsStyle/pagesStyle/loginStyle"
 import Button from "../util/Button"
 import logo from "../../images/logo.svg"
-import TextInput from "../util/TextInput"
 import { loginUser } from "../../redux/actions/userActions"
 
 const token = localStorage.FBIdToken

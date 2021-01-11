@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react"
+import React from "react"
 import { createUseStyles } from "react-jss"
 
 import style from "../../css/componentsStyle/utilStyle/AvatarStyle"

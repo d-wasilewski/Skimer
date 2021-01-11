@@ -41,7 +41,9 @@ export default {
       },
 
       "@media (max-width: 1050px)": {
-         marginRight: 50,
+         margin: 10,
+         marginTop: 200,
+         marginBottom: 100
       },
       "@media (max-width: 800px)": {
          gridTemplateColumns: "40% 60%",

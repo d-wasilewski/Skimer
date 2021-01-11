@@ -51,5 +51,43 @@ export default {
             display: "block",
          },
       },
+      "@media (max-width: 1050px)": {
+         width: "100vw",
+         height: 60,
+         top: "auto",
+         zIndex: 500,
+         bottom: 0,
+         display: "flex",
+         justifyContent: "center",
+         padding: 0,
+
+         "& a.active li": {
+            color: theme.pallette.grayDark,
+            "&:before": {
+               display: "none",
+            },
+         },
+
+         "& ul": {
+            display: "flex",
+            flexDirection: "row",
+            alignItems: "center",
+            margin: 0,
+
+            "& a": {
+               "& li":{
+                  padding: "10px 25px",
+                  width: 25,
+                  margin: "0 5px",
+                  "&:hover": {
+                     color: theme.pallette.main,
+                     "&:before": {
+                        display: "none",
+                     },
+                  }
+               }
+            },
+         }
+      },
    },
 }

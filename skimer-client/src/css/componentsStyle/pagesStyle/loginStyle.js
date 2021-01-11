@@ -27,11 +27,13 @@ export default {
          flexDirection: "column",
          borderRadius: 10,
          boxShadow: theme.shadows.medium,
+
+         "@media (max-width: 600px)": {
+            width: 400,
+         },
+
          "& .login-header": {
             display: "flex",
-            // height: 140,
-            // width: 140,
-            // backgroundColor: "red",
             justifyContent: "flex-start",
             alignItems: "flex-start",
             boxSizing: "border-box",

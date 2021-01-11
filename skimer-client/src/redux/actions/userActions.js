@@ -60,7 +60,7 @@ export const uploadImage = (formData) => (dispatch) => {
 export const setFinished = (event) => (dispatch) => {
    axios
       .post("/event/finish", event)
-      .then((res) => {
+      .then(() => {
          dispatch({
             type: SET_FINISHED,
             payload: event.eventId,
@@ -72,7 +72,7 @@ export const setFinished = (event) => (dispatch) => {
 export const setUnfinished = (eventId) => (dispatch) => {
    axios
       .delete(`/event/unfinish/${eventId}`)
-      .then((res) => {
+      .then(() => {
          dispatch({
             type: SET_UNFINISHED,
             payload: eventId,

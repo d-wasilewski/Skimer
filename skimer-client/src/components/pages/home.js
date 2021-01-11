@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect, Fragment } from "react"
+import React, { useState, useEffect, Fragment } from "react"
 import { createUseStyles } from "react-jss"
 import { useSelector, useDispatch } from "react-redux"
 
@@ -20,11 +20,7 @@ import {
    deleteEvent,
 } from "../../redux/actions/dataActions"
 
-import {
-   getUserData,
-   setFinished,
-   setUnfinished,
-} from "../../redux/actions/userActions"
+import { setFinished, setUnfinished } from "../../redux/actions/userActions"
 
 const useStyles = createUseStyles(style)
 

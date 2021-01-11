@@ -1,14 +1,27 @@
 {
-    "emulators": {
-      "functions": {
-        "port": 5001
-      },
-      "database": {
-        "port": 9000
-      },
-      "ui": {
-        "enabled": true
-      }
+  "emulators": {
+    "functions": {
+      "port": 5001
+    },
+    "database": {
+      "port": 9000
+    },
+    "ui": {
+      "enabled": true
     }
+  },
+  "hosting": {
+    "public": "skimer-client/build",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ],
+    "rewrites": [
+      {
+        "source": "**",
+        "destination": "/index.html"
+      }
+    ]
   }
-  
+}

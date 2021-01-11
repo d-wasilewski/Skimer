@@ -93,13 +93,10 @@ export const clearSubject = () => (dispatch) => {
 }
 
 export const deleteEvent = (eventId) => (dispatch) => {
-   console.log("1")
-   console.log(eventId)
    axios
       .delete(`/event/${eventId}`)
-      .then((res) => {
+      .then(() => {
          dispatch({ type: REMOVE_EVENT, payload: eventId })
-         console.log(res)
       })
       .catch((err) => console.log(err))
 }

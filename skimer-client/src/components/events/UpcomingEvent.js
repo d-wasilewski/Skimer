@@ -1,5 +1,5 @@
-import React, { useEffect } from "react"
-import { useSelector, useDispatch } from "react-redux"
+import React from "react"
+import { useSelector } from "react-redux"
 import { createUseStyles } from "react-jss"
 import dayjs from "dayjs"
 import "dayjs/locale/pl"
@@ -30,7 +30,10 @@ export default function UpcomingEvent({
    dayjs.locale("pl")
 
    let user = users.find((user) => user.handle == event.author)
-   const username = user && user.name ? user.name : "Ładowanie..."
+   const username = user && user.name ? user.name : ""
+   const name = username.split(" ")[0]
+   const surname = username.split(" ")[1]
+   let initials = name && surname ? name[0] + surname[0] : ""
 
    const createdAt = event && event.createdAt ? event.createdAt : new Date()
    const deadline = event && event.deadline ? event.deadline : new Date()
@@ -65,7 +68,7 @@ export default function UpcomingEvent({
             <span>{description}</span>
          </div>
          <div className="avatar">
-            <Avatar size="56" avatarImage={authorImage} />
+            <Avatar size="56" avatarImage={authorImage} initials={initials}/>
          </div>
          <div className="author">
             <h5>{username}</h5>
@@ -76,7 +79,9 @@ export default function UpcomingEvent({
                onClick={() =>
                   finished ? handleSetUnfinished() : handleSetFinished()
                }
-               onKeyDown={(e) => console.log()}
+               onKeyDown={() =>
+                  finished ? handleSetUnfinished() : handleSetFinished()
+               }
                role="button"
                tabIndex={0}
             >
